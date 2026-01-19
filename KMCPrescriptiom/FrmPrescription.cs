@@ -1,189 +1,406 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using KMCPrescriptiom.DAL;
+using KMCPrescriptiom.DataAccessLayer;
+using System.Linq;
 
 namespace KMCPrescriptiom
 {
     public partial class FrmPrescription : Form
     {
-        private readonly string _connectionString =
-@"Server=.\SQLEXPRESS;Database=KMC;User Id=sa;Password=abcd@1234;";
-
         public long PatientID = 0;
+
+        private DataTable _patientsCache;
+        private bool _suppressEvents;
+
         public FrmPrescription()
         {
             InitializeComponent();
-            LoadDiagnosisDropdown();
-        }
-        private void LoadDiagnosisDropdown()
-        {
-            DataTable dt = KMCPrescriptiom.DAL.DAL.GetData(
-                "SELECT [PatientId] ID, [FullName] Name FROM [Patients] ORDER BY ID");
-            DataRow dr = dt.NewRow();
-            dr["ID"] = 0;
-            dr["Name"] = "-- Select Patient --";
-            dt.Rows.InsertAt(dr, 0);
-            cmbExistingPatients.DataSource = dt;
-            cmbExistingPatients.DisplayMember = "Name";
-            cmbExistingPatients.ValueMember = "ID";
-            cmbExistingPatients.SelectedIndex = 0;
-
-
+            ConfigurePatientCombo();
+            LoadPatientsCache();
         }
 
-        private DataTable GetLabReportsTable()
+        // =======================
+        // Configure ComboBox
+        // =======================
+        private void ConfigurePatientCombo()
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("LabTestId", typeof(int));
-            dt.Columns.Add("ResultValue", typeof(string));
+            cmbExistingPatients.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbExistingPatients.AutoCompleteMode = AutoCompleteMode.None;
+            cmbExistingPatients.AutoCompleteSource = AutoCompleteSource.None;
+            cmbExistingPatients.Items.Clear();
+        }
 
-            foreach (DataGridViewRow row in gvLabReportTests.Rows)
+        // =======================
+        // Load Patients ONCE
+        // =======================
+        private void LoadPatientsCache()
+        {
+            _patientsCache = DAL.GetData(
+                "SELECT PatientId, FullName FROM Patients");
+        }
+
+        // =======================
+        // Smooth Live Search
+        // =======================
+        private void cmbExistingPatients_TextUpdate(object sender, EventArgs e)
+        {
+            if (_suppressEvents) return;
+
+            string text = cmbExistingPatients.Text.Trim();
+
+            if (text.Length < 2)
             {
-                if (row.IsNewRow) continue;
-
-                dt.Rows.Add(
-                    Convert.ToInt32(row.Cells["LabTestId"].Value),
-                    row.Cells["ResultValue"].Value?.ToString()
-                );
+                cmbExistingPatients.DroppedDown = false;
+                return;
             }
-            return dt;
-        }
-        private DataTable GetPrescriptionTable()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("MedicineId", typeof(int));
-            dt.Columns.Add("Dose", typeof(string));
-            dt.Columns.Add("Morning", typeof(bool));
-            dt.Columns.Add("Noon", typeof(bool));
-            dt.Columns.Add("Evening", typeof(bool));
-            dt.Columns.Add("Night", typeof(bool));
-            dt.Columns.Add("Days", typeof(int));
 
-            foreach (DataGridViewRow row in dgvPrescription.Rows)
+            _suppressEvents = true;
+
+            cmbExistingPatients.BeginUpdate();
+            cmbExistingPatients.Items.Clear();
+
+            foreach (DataRow row in _patientsCache.Rows)
             {
-                if (row.IsNewRow) continue;
+                string name = row["FullName"].ToString();
 
-                dt.Rows.Add(
-                    Convert.ToInt32(row.Cells["MedicineId"].Value),
-                    row.Cells["Dose"].Value?.ToString(),
-                    Convert.ToBoolean(row.Cells["Morning"].Value),
-                    Convert.ToBoolean(row.Cells["Noon"].Value),
-                    Convert.ToBoolean(row.Cells["Evening"].Value),
-                    Convert.ToBoolean(row.Cells["Night"].Value),
-                    Convert.ToInt32(row.Cells["Days"].Value)
-                );
+                if (name.IndexOf(text, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    cmbExistingPatients.Items.Add(new ComboBoxItem
+                    {
+                        Text = name,
+                        Value = Convert.ToInt64(row["PatientId"])
+                    });
+                }
             }
-            return dt;
-        }
-        private DataTable GetDietTable()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("DietId", typeof(int));
-            dt.Columns.Add("CustomAdvice", typeof(string));
 
-            foreach (DataGridViewRow row in dgvDiet.Rows)
-            {
-                if (row.IsNewRow) continue;
+            cmbExistingPatients.EndUpdate();
 
-                dt.Rows.Add(
-                    row.Cells["DietId"].Value == null ? DBNull.Value : row.Cells["DietId"].Value,
-                    row.Cells["CustomAdvice"].Value?.ToString()
-                );
-            }
-            return dt;
+            cmbExistingPatients.DroppedDown = cmbExistingPatients.Items.Count > 0;
+            cmbExistingPatients.SelectionStart = text.Length;
+
+            _suppressEvents = false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        // =======================
+        // Load Patient On Select
+        // =======================
+        private void cmbExistingPatients_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(_connectionString))
-            using (SqlCommand cmd = new SqlCommand("usp_SaveFullPatientVisit", con))
+            if (cmbExistingPatients.SelectedItem is ComboBoxItem item)
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Patient
-                cmd.Parameters.AddWithValue("@MRNo", txtMRNo.Text);
-                cmd.Parameters.AddWithValue("@FullName", txtFullName.Text);
-                cmd.Parameters.AddWithValue("@Age", txtAge.Text);
-                cmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
-                cmd.Parameters.AddWithValue("@ContactNo", txtContact.Text);
-
-                // Visit
-                cmd.Parameters.AddWithValue("@DoctorName", "Salman");
-
-                // History
-                cmd.Parameters.AddWithValue("@PresentComplaints", txtPresentingComplaints.Text);
-                cmd.Parameters.AddWithValue("@PastMedical", txtPastMedicalHistory.Text);
-                cmd.Parameters.AddWithValue("@PastSurgical", txtPastSurgicalHistory.Text);
-                cmd.Parameters.AddWithValue("@DrugAllergies", txtDrugsAllergies.Text);
-                cmd.Parameters.AddWithValue("@FamilyHistory", "");
-
-                // Examination
-                cmd.Parameters.AddWithValue("@BP", txtBP.Text);
-                cmd.Parameters.AddWithValue("@Pulse", txtPulse.Text);
-                cmd.Parameters.AddWithValue("@Temperature", txtTemp.Text);
-                cmd.Parameters.AddWithValue("@Weight", txtWeight.Text);
-                cmd.Parameters.AddWithValue("@Height", txtHeight.Text);
-                cmd.Parameters.AddWithValue("@SystemicExam", txtRemarksSysExam.Text);
-                cmd.Parameters.AddWithValue("@IsNormal", chkNormal.Checked);
-
-                // Diagnosis
-                cmd.Parameters.AddWithValue("@ProvisionalDiagnosis", cmdProvisionalDiagnosis.Text);
-                cmd.Parameters.AddWithValue("@FinalDiagnosis", txtFinalDiagnosis.Text);
-
-                // TVPs
-                SqlParameter labParam = cmd.Parameters.AddWithValue("@LabReports", GetLabReportsTable());
-                labParam.SqlDbType = SqlDbType.Structured;
-
-                SqlParameter presParam = cmd.Parameters.AddWithValue("@Prescriptions", GetPrescriptionTable());
-                presParam.SqlDbType = SqlDbType.Structured;
-
-                SqlParameter dietParam = cmd.Parameters.AddWithValue("@DietAdvice", GetDietTable());
-                dietParam.SqlDbType = SqlDbType.Structured;
-
-                con.Open();
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Prescription saved successfully ✔",
-                                "Success",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                LoadPatient(item.Value);
             }
         }
 
-        private void btnSavePatient_Click(object sender, EventArgs e)
+        // =======================
+        // Load Patient Data
+        // =======================
+        private void LoadPatient(long patientId)
         {
+            DataTable dt = DAL.GetData(
+                @"SELECT PatientId, MRNo, FullName, Age, Gender, ContactNo, Visit
+                  FROM Patients
+                  WHERE PatientId = @PatientId",
+                new SqlParameter("@PatientId", patientId));
 
-            long PatientID = KMCPrescriptiom.DAL.DAL.SavePatient(
-                            txtMRNo.Text.Trim(),
-                            txtFullName.Text.Trim(),
-                            int.TryParse(txtAge.Text, out int age) ? age : 0,
-                            cmbGender.Text,          // ✅ Corrected
-                            txtContact.Text.Trim(),
-                            dtVisit.Value             // ✅ Corrected
-                        );
+            if (dt.Rows.Count == 0) return;
 
-            if (PatientID > 0)
+            DataRow dr = dt.Rows[0];
+
+            PatientID = patientId;
+            txtMRNo.Text = dr["MRNo"].ToString();
+            txtFullName.Text = dr["FullName"].ToString();
+            txtAge.Text = dr["Age"].ToString();
+            cmbGender.SelectedIndex = Convert.ToInt32(dr["Gender"]);
+            txtContact.Text = dr["ContactNo"].ToString();
+            if (dr["Visit"] != DBNull.Value)
             {
-                MessageBox.Show("User Added successfully ✔",
-                              "Success",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Information);
+                dtVisit.Value = Convert.ToDateTime(dr["Visit"]);
             }
             else
             {
-                MessageBox.Show("User not added, please try again with correct info. ",
-                              "Success",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Error);
+                dtVisit.Value = DateTime.Now; // or leave as-is
             }
         }
+
+        // =======================
+        // Save Patient
+        // =======================
+        private void btnSavePatient_Click(object sender, EventArgs e)
+        {
+            long patientId = DAL.SavePatient(
+                txtMRNo.Text.Trim(),
+                txtFullName.Text.Trim(),
+                int.TryParse(txtAge.Text, out int age) ? age : 0,
+                cmbGender.SelectedIndex,
+                txtContact.Text.Trim(),
+                dtVisit.Value
+            );
+
+            if (patientId > 0)
+            {
+                MessageBox.Show("User Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+
+        private void btnSaveHistory_Click(object sender, EventArgs e)
+        {
+            if (PatientID == 0)
+            {
+                MessageBox.Show("Please Select the Patient First!",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            long HistoryId = DAL.SavePatienHistory(
+             PatientID,
+             txtPresentingComplaints.Text,
+             txtPastMedicalHistory.Text,
+             txtPastSurgicalHistory.Text,
+             txtDrugsAllergies.Text);
+
+            if (HistoryId > 0)
+            {
+                MessageBox.Show("Patient History Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+
+        private void btnSaveExamination_Click(object sender, EventArgs e)
+        {
+            if (PatientID == 0)
+            {
+                MessageBox.Show("Please Select the Patient First!",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            long PhysicalExamID = DAL.SavePhysicalExamination(
+             PatientID,
+             txtBP.Text,
+             txtPulse.Text,
+             txtTemp.Text,
+             txtWeight.Text,
+             txtHeight.Text,
+             txtRemarksSysExam.Text,
+             chkNormal.Checked);
+
+            if (PhysicalExamID > 0)
+            {
+                MessageBox.Show("Patient Examination Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+
+        private void btnAddTest_Click(object sender, EventArgs e)
+        {
+            if (PatientID == 0)
+            {
+                MessageBox.Show("Please Select the Patient First!",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            long LabTestID = DAL.SavePatientLabReport(
+                PatientID,
+                txtTestName.Text,
+                txtTestResult.Text,
+                txtTestUnit.Text,
+                txtTestNormalRange.Text
+            );
+
+            if (LabTestID > 0)
+            {
+                MessageBox.Show("Patient Test Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+
+        private void btnSaveDiagnosis_Click(object sender, EventArgs e)
+        {
+            if (PatientID == 0)
+            {
+                MessageBox.Show("Please Select the Patient First!",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            long PatientDiagnosisID = DAL.SavePatientDiagnosis(
+                PatientID,
+                txtProvisionalDiagnosis.Text,
+                txtFinalDiagnosis.Text                
+            );
+
+            if (PatientDiagnosisID > 0)
+            {
+                MessageBox.Show("Patient Diagnosis Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+
+        private void btnSavePrescriptions_Click(object sender, EventArgs e)
+        {
+            if (PatientID == 0)
+            {
+                MessageBox.Show("Please Select the Patient First!",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            long PatientDiagnosisID = DAL.SavePrescription(
+    PatientID,
+    txtMedicien.Text,
+    txtDays.Text,
+    txtDose.Text,
+    txtInstructions.Text,
+    chkMorning.Checked,
+    chkNoon.Checked,
+    chkEvening.Checked,
+    chkNight.Checked);
+
+            if (PatientDiagnosisID > 0)
+            {
+                MessageBox.Show("Patient Prescription Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+
+        private void btnSaveDietaryAdvice_Click(object sender, EventArgs e)
+        {
+            if (PatientID == 0)
+            {
+                MessageBox.Show("Please Select the Patient First!",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            string dietType = string.Join(", ",
+                chkListDietary.CheckedItems.Cast<string>()
+            );
+
+            long PatientDietID = DAL.SavePatientDietAdvice(
+       PatientID,
+       dietType,
+       txtCustomDietaryInstructions.Text.Trim()
+   );
+
+
+            if (PatientDietID > 0)
+            {
+                MessageBox.Show("Patient Prescription Added successfully ✔",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+            else
+            {
+                MessageBox.Show("User not added, please try again.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                ConfigurePatientCombo();
+                LoadPatientsCache();
+            }
+        }
+    }
+
+    // =======================
+    // ComboBox Item Helper
+    // =======================
+    class ComboBoxItem
+    {
+        public string Text { get; set; }
+        public long Value { get; set; }
+
+        public override string ToString() => Text;
     }
 }
