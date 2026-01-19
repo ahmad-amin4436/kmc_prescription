@@ -199,17 +199,17 @@ namespace KMCPrescriptiom.DataAccessLayer
             }
         }
         public static long SavePrescription(
-    long PatientID,
-    string Medicine,
-    string Days,
-    string Dose,
-    string Instructions,
-    bool Morning,
-    bool Noon,
-    bool Evening,
-    bool Night,
-    long? PrescriptionId = null  // optional, for update
-)
+            long PatientID,
+            string Medicine,
+            string Days,
+            string Dose,
+            string Instructions,
+            bool Morning,
+            bool Noon,
+            bool Evening,
+            bool Night,
+            long? PrescriptionId = null  // optional, for update
+        )
         {
             using (DbCommand cmd = _db.GetStoredProcCommand("usp_SavePrescription"))
             {
@@ -238,11 +238,11 @@ namespace KMCPrescriptiom.DataAccessLayer
             }
         }
         public static long SavePatientDietAdvice(
-    long PatientID,
-    string DietType,
-    string CustomAdvice,
-    long? PatientDietId = null  // optional, for update
-)
+            long PatientID,
+            string DietType,
+            string CustomAdvice,
+            long? PatientDietId = null  // optional, for update
+        )
         {
             using (DbCommand cmd = _db.GetStoredProcCommand("usp_SavePatientDietAdvice"))
             {

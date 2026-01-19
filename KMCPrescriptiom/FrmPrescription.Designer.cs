@@ -46,25 +46,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.History = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtPastMedicalHistory = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtPresentingComplaints = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnSaveHistory = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtDrugsAllergies = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtPastSurgicalHistory = new System.Windows.Forms.TextBox();
             this.Examination = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.gvPatientExam = new System.Windows.Forms.DataGridView();
             this.btnSaveExamination = new System.Windows.Forms.Button();
             this.txtRemarksSysExam = new System.Windows.Forms.TextBox();
             this.chkNormal = new System.Windows.Forms.CheckBox();
-            this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.txtTemp = new System.Windows.Forms.TextBox();
             this.txtPulse = new System.Windows.Forms.TextBox();
@@ -86,12 +76,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTestName = new System.Windows.Forms.TextBox();
             this.Diagnosis = new System.Windows.Forms.TabPage();
+            this.txtProvisionalDiagnosis = new System.Windows.Forms.TextBox();
+            this.gvProvDiagnosis = new System.Windows.Forms.DataGridView();
             this.txtFinalDiagnosis = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnSaveDiagnosis = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.Prescription = new System.Windows.Forms.TabPage();
-            this.dgvPrescription = new System.Windows.Forms.DataGridView();
+            this.txtMedicien = new System.Windows.Forms.TextBox();
+            this.gvPrescription = new System.Windows.Forms.DataGridView();
             this.btnSavePrescriptions = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -105,7 +98,8 @@
             this.chkMorning = new System.Windows.Forms.CheckBox();
             this.txtDose = new System.Windows.Forms.TextBox();
             this.DietaryAdvice = new System.Windows.Forms.TabPage();
-            this.dgvDiet = new System.Windows.Forms.DataGridView();
+            this.btnSaveDietaryAdvice = new System.Windows.Forms.Button();
+            this.gvDiet = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCustomDietaryInstructions = new System.Windows.Forms.TextBox();
             this.chkListDietary = new System.Windows.Forms.CheckedListBox();
@@ -116,35 +110,35 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSavePatient = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.gvProvDiagnosis = new System.Windows.Forms.DataGridView();
-            this.txtProvisionalDiagnosis = new System.Windows.Forms.TextBox();
-            this.txtMedicien = new System.Windows.Forms.TextBox();
-            this.btnSaveDietaryAdvice = new System.Windows.Forms.Button();
+            this.txtPresentingComplaints = new System.Windows.Forms.TextBox();
+            this.txtPastSurgicalHistory = new System.Windows.Forms.TextBox();
+            this.txtPastMedicalHistory = new System.Windows.Forms.TextBox();
+            this.txtDrugsAllergies = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnSaveHistory = new System.Windows.Forms.Button();
+            this.gvPatientHistory = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.History.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.Examination.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPatientExam)).BeginInit();
             this.LabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvLabReportTests)).BeginInit();
             this.Diagnosis.SuspendLayout();
-            this.Prescription.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).BeginInit();
-            this.DietaryAdvice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiet)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvProvDiagnosis)).BeginInit();
+            this.Prescription.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPrescription)).BeginInit();
+            this.DietaryAdvice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDiet)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPatientHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -165,6 +159,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSavePatient);
             this.panel1.Controls.Add(this.cmbExistingPatients);
             this.panel1.Controls.Add(this.lblVisit);
             this.panel1.Controls.Add(this.dtVisit);
@@ -197,7 +192,7 @@
             // lblVisit
             // 
             this.lblVisit.AutoSize = true;
-            this.lblVisit.Location = new System.Drawing.Point(533, 53);
+            this.lblVisit.Location = new System.Drawing.Point(515, 53);
             this.lblVisit.Name = "lblVisit";
             this.lblVisit.Size = new System.Drawing.Size(43, 25);
             this.lblVisit.TabIndex = 11;
@@ -205,9 +200,9 @@
             // 
             // dtVisit
             // 
-            this.dtVisit.Location = new System.Drawing.Point(582, 47);
+            this.dtVisit.Location = new System.Drawing.Point(564, 47);
             this.dtVisit.Name = "dtVisit";
-            this.dtVisit.Size = new System.Drawing.Size(332, 33);
+            this.dtVisit.Size = new System.Drawing.Size(203, 33);
             this.dtVisit.TabIndex = 10;
             // 
             // txtContact
@@ -249,15 +244,15 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(582, 11);
+            this.txtAge.Location = new System.Drawing.Point(564, 11);
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(145, 33);
+            this.txtAge.Size = new System.Drawing.Size(163, 33);
             this.txtAge.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(531, 14);
+            this.label1.Location = new System.Drawing.Point(513, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 25);
             this.label1.TabIndex = 4;
@@ -319,7 +314,16 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage1.Controls.Add(this.gvPatientHistory);
+            this.tabPage1.Controls.Add(this.btnSaveHistory);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.txtDrugsAllergies);
+            this.tabPage1.Controls.Add(this.txtPastMedicalHistory);
+            this.tabPage1.Controls.Add(this.txtPastSurgicalHistory);
+            this.tabPage1.Controls.Add(this.txtPresentingComplaints);
             this.tabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
@@ -328,122 +332,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "History";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel5, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 7);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(895, 295);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupBox2);
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(441, 289);
-            this.panel4.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtPastMedicalHistory);
-            this.groupBox2.Location = new System.Drawing.Point(21, 141);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 124);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Past Medical History";
-            // 
-            // txtPastMedicalHistory
-            // 
-            this.txtPastMedicalHistory.Location = new System.Drawing.Point(7, 33);
-            this.txtPastMedicalHistory.Multiline = true;
-            this.txtPastMedicalHistory.Name = "txtPastMedicalHistory";
-            this.txtPastMedicalHistory.Size = new System.Drawing.Size(380, 85);
-            this.txtPastMedicalHistory.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtPresentingComplaints);
-            this.groupBox1.Location = new System.Drawing.Point(21, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 119);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Presenting Complaints";
-            // 
-            // txtPresentingComplaints
-            // 
-            this.txtPresentingComplaints.Location = new System.Drawing.Point(7, 32);
-            this.txtPresentingComplaints.Multiline = true;
-            this.txtPresentingComplaints.Name = "txtPresentingComplaints";
-            this.txtPresentingComplaints.Size = new System.Drawing.Size(380, 81);
-            this.txtPresentingComplaints.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnSaveHistory);
-            this.panel5.Controls.Add(this.groupBox4);
-            this.panel5.Controls.Add(this.groupBox3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(450, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(442, 289);
-            this.panel5.TabIndex = 1;
-            // 
-            // btnSaveHistory
-            // 
-            this.btnSaveHistory.Location = new System.Drawing.Point(308, 260);
-            this.btnSaveHistory.Name = "btnSaveHistory";
-            this.btnSaveHistory.Size = new System.Drawing.Size(114, 35);
-            this.btnSaveHistory.TabIndex = 2;
-            this.btnSaveHistory.Text = "Save";
-            this.btnSaveHistory.UseVisualStyleBackColor = true;
-            this.btnSaveHistory.Click += new System.EventHandler(this.btnSaveHistory_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtDrugsAllergies);
-            this.groupBox4.Location = new System.Drawing.Point(21, 140);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(401, 124);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Drug Allergies";
-            // 
-            // txtDrugsAllergies
-            // 
-            this.txtDrugsAllergies.Location = new System.Drawing.Point(7, 34);
-            this.txtDrugsAllergies.Multiline = true;
-            this.txtDrugsAllergies.Name = "txtDrugsAllergies";
-            this.txtDrugsAllergies.Size = new System.Drawing.Size(388, 84);
-            this.txtDrugsAllergies.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txtPastSurgicalHistory);
-            this.groupBox3.Location = new System.Drawing.Point(21, 15);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(401, 119);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Past Surgical History";
-            // 
-            // txtPastSurgicalHistory
-            // 
-            this.txtPastSurgicalHistory.Location = new System.Drawing.Point(6, 32);
-            this.txtPastSurgicalHistory.Multiline = true;
-            this.txtPastSurgicalHistory.Name = "txtPastSurgicalHistory";
-            this.txtPastSurgicalHistory.Size = new System.Drawing.Size(389, 81);
-            this.txtPastSurgicalHistory.TabIndex = 0;
             // 
             // Examination
             // 
@@ -466,10 +354,12 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Controls.Add(this.txtWeight);
+            this.panel6.Controls.Add(this.gvPatientExam);
             this.panel6.Controls.Add(this.btnSaveExamination);
             this.panel6.Controls.Add(this.txtRemarksSysExam);
             this.panel6.Controls.Add(this.chkNormal);
-            this.panel6.Controls.Add(this.txtWeight);
             this.panel6.Controls.Add(this.txtHeight);
             this.panel6.Controls.Add(this.txtTemp);
             this.panel6.Controls.Add(this.txtPulse);
@@ -484,9 +374,37 @@
             this.panel6.Size = new System.Drawing.Size(889, 293);
             this.panel6.TabIndex = 0;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 81);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 25);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Weight";
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.Location = new System.Drawing.Point(81, 77);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(145, 33);
+            this.txtWeight.TabIndex = 11;
+            // 
+            // gvPatientExam
+            // 
+            this.gvPatientExam.AllowUserToAddRows = false;
+            this.gvPatientExam.AllowUserToDeleteRows = false;
+            this.gvPatientExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPatientExam.Location = new System.Drawing.Point(19, 156);
+            this.gvPatientExam.Name = "gvPatientExam";
+            this.gvPatientExam.ReadOnly = true;
+            this.gvPatientExam.RowTemplate.Height = 28;
+            this.gvPatientExam.Size = new System.Drawing.Size(851, 134);
+            this.gvPatientExam.TabIndex = 10;
+            // 
             // btnSaveExamination
             // 
-            this.btnSaveExamination.Location = new System.Drawing.Point(662, 245);
+            this.btnSaveExamination.Location = new System.Drawing.Point(715, 93);
             this.btnSaveExamination.Name = "btnSaveExamination";
             this.btnSaveExamination.Size = new System.Drawing.Size(145, 35);
             this.btnSaveExamination.TabIndex = 9;
@@ -496,61 +414,54 @@
             // 
             // txtRemarksSysExam
             // 
-            this.txtRemarksSysExam.Location = new System.Drawing.Point(447, 41);
+            this.txtRemarksSysExam.Location = new System.Drawing.Point(377, 73);
             this.txtRemarksSysExam.Multiline = true;
             this.txtRemarksSysExam.Name = "txtRemarksSysExam";
-            this.txtRemarksSysExam.Size = new System.Drawing.Size(412, 198);
+            this.txtRemarksSysExam.Size = new System.Drawing.Size(321, 72);
             this.txtRemarksSysExam.TabIndex = 8;
             // 
             // chkNormal
             // 
             this.chkNormal.AutoSize = true;
-            this.chkNormal.Location = new System.Drawing.Point(142, 225);
+            this.chkNormal.Location = new System.Drawing.Point(19, 116);
             this.chkNormal.Name = "chkNormal";
             this.chkNormal.Size = new System.Drawing.Size(210, 29);
             this.chkNormal.TabIndex = 7;
             this.chkNormal.Text = "Normal Examination";
             this.chkNormal.UseVisualStyleBackColor = true;
             // 
-            // txtWeight
-            // 
-            this.txtWeight.Location = new System.Drawing.Point(142, 177);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(199, 33);
-            this.txtWeight.TabIndex = 6;
-            // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(142, 135);
+            this.txtHeight.Location = new System.Drawing.Point(715, 25);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(199, 33);
+            this.txtHeight.Size = new System.Drawing.Size(145, 33);
             this.txtHeight.TabIndex = 5;
             // 
             // txtTemp
             // 
-            this.txtTemp.Location = new System.Drawing.Point(142, 96);
+            this.txtTemp.Location = new System.Drawing.Point(485, 25);
             this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(199, 33);
+            this.txtTemp.Size = new System.Drawing.Size(145, 33);
             this.txtTemp.TabIndex = 4;
             // 
             // txtPulse
             // 
-            this.txtPulse.Location = new System.Drawing.Point(142, 57);
+            this.txtPulse.Location = new System.Drawing.Point(269, 25);
             this.txtPulse.Name = "txtPulse";
-            this.txtPulse.Size = new System.Drawing.Size(199, 33);
+            this.txtPulse.Size = new System.Drawing.Size(145, 33);
             this.txtPulse.TabIndex = 3;
             // 
             // txtBP
             // 
-            this.txtBP.Location = new System.Drawing.Point(142, 18);
+            this.txtBP.Location = new System.Drawing.Point(65, 25);
             this.txtBP.Name = "txtBP";
-            this.txtBP.Size = new System.Drawing.Size(199, 33);
+            this.txtBP.Size = new System.Drawing.Size(145, 33);
             this.txtBP.TabIndex = 2;
             // 
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(14, 140);
+            this.lblHeight.Location = new System.Drawing.Point(641, 28);
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(68, 25);
             this.lblHeight.TabIndex = 1;
@@ -559,16 +470,16 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(452, 13);
+            this.lblRemarks.Location = new System.Drawing.Point(235, 93);
             this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.Size = new System.Drawing.Size(215, 25);
+            this.lblRemarks.Size = new System.Drawing.Size(136, 25);
             this.lblRemarks.TabIndex = 1;
-            this.lblRemarks.Text = "Remarks/Systemic Exam.";
+            this.lblRemarks.Text = "Remarks Exam.";
             // 
             // lblTemp
             // 
             this.lblTemp.AutoSize = true;
-            this.lblTemp.Location = new System.Drawing.Point(14, 103);
+            this.lblTemp.Location = new System.Drawing.Point(422, 28);
             this.lblTemp.Name = "lblTemp";
             this.lblTemp.Size = new System.Drawing.Size(57, 25);
             this.lblTemp.TabIndex = 1;
@@ -577,7 +488,7 @@
             // lblPulse
             // 
             this.lblPulse.AutoSize = true;
-            this.lblPulse.Location = new System.Drawing.Point(14, 65);
+            this.lblPulse.Location = new System.Drawing.Point(215, 28);
             this.lblPulse.Name = "lblPulse";
             this.lblPulse.Size = new System.Drawing.Size(57, 25);
             this.lblPulse.TabIndex = 1;
@@ -614,11 +525,14 @@
             // 
             // gvLabReportTests
             // 
+            this.gvLabReportTests.AllowUserToAddRows = false;
+            this.gvLabReportTests.AllowUserToDeleteRows = false;
             this.gvLabReportTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvLabReportTests.Location = new System.Drawing.Point(12, 154);
+            this.gvLabReportTests.Location = new System.Drawing.Point(12, 139);
             this.gvLabReportTests.Name = "gvLabReportTests";
+            this.gvLabReportTests.ReadOnly = true;
             this.gvLabReportTests.RowTemplate.Height = 28;
-            this.gvLabReportTests.Size = new System.Drawing.Size(888, 150);
+            this.gvLabReportTests.Size = new System.Drawing.Size(888, 163);
             this.gvLabReportTests.TabIndex = 10;
             // 
             // txtTestNormalRange
@@ -711,6 +625,26 @@
             this.Diagnosis.Text = "Diagnosis";
             this.Diagnosis.UseVisualStyleBackColor = true;
             // 
+            // txtProvisionalDiagnosis
+            // 
+            this.txtProvisionalDiagnosis.Location = new System.Drawing.Point(201, 18);
+            this.txtProvisionalDiagnosis.Multiline = true;
+            this.txtProvisionalDiagnosis.Name = "txtProvisionalDiagnosis";
+            this.txtProvisionalDiagnosis.Size = new System.Drawing.Size(232, 83);
+            this.txtProvisionalDiagnosis.TabIndex = 6;
+            // 
+            // gvProvDiagnosis
+            // 
+            this.gvProvDiagnosis.AllowUserToAddRows = false;
+            this.gvProvDiagnosis.AllowUserToDeleteRows = false;
+            this.gvProvDiagnosis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvProvDiagnosis.Location = new System.Drawing.Point(8, 151);
+            this.gvProvDiagnosis.Name = "gvProvDiagnosis";
+            this.gvProvDiagnosis.ReadOnly = true;
+            this.gvProvDiagnosis.RowTemplate.Height = 28;
+            this.gvProvDiagnosis.Size = new System.Drawing.Size(888, 150);
+            this.gvProvDiagnosis.TabIndex = 5;
+            // 
             // txtFinalDiagnosis
             // 
             this.txtFinalDiagnosis.Location = new System.Drawing.Point(575, 18);
@@ -750,7 +684,7 @@
             // Prescription
             // 
             this.Prescription.Controls.Add(this.txtMedicien);
-            this.Prescription.Controls.Add(this.dgvPrescription);
+            this.Prescription.Controls.Add(this.gvPrescription);
             this.Prescription.Controls.Add(this.btnSavePrescriptions);
             this.Prescription.Controls.Add(this.label11);
             this.Prescription.Controls.Add(this.label10);
@@ -771,14 +705,24 @@
             this.Prescription.Text = "Prescription";
             this.Prescription.UseVisualStyleBackColor = true;
             // 
-            // dgvPrescription
+            // txtMedicien
             // 
-            this.dgvPrescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrescription.Location = new System.Drawing.Point(19, 137);
-            this.dgvPrescription.Name = "dgvPrescription";
-            this.dgvPrescription.RowTemplate.Height = 28;
-            this.dgvPrescription.Size = new System.Drawing.Size(870, 176);
-            this.dgvPrescription.TabIndex = 15;
+            this.txtMedicien.Location = new System.Drawing.Point(110, 26);
+            this.txtMedicien.Name = "txtMedicien";
+            this.txtMedicien.Size = new System.Drawing.Size(255, 33);
+            this.txtMedicien.TabIndex = 16;
+            // 
+            // gvPrescription
+            // 
+            this.gvPrescription.AllowUserToAddRows = false;
+            this.gvPrescription.AllowUserToDeleteRows = false;
+            this.gvPrescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPrescription.Location = new System.Drawing.Point(19, 137);
+            this.gvPrescription.Name = "gvPrescription";
+            this.gvPrescription.ReadOnly = true;
+            this.gvPrescription.RowTemplate.Height = 28;
+            this.gvPrescription.Size = new System.Drawing.Size(870, 165);
+            this.gvPrescription.TabIndex = 15;
             // 
             // btnSavePrescriptions
             // 
@@ -891,7 +835,7 @@
             // DietaryAdvice
             // 
             this.DietaryAdvice.Controls.Add(this.btnSaveDietaryAdvice);
-            this.DietaryAdvice.Controls.Add(this.dgvDiet);
+            this.DietaryAdvice.Controls.Add(this.gvDiet);
             this.DietaryAdvice.Controls.Add(this.label14);
             this.DietaryAdvice.Controls.Add(this.txtCustomDietaryInstructions);
             this.DietaryAdvice.Controls.Add(this.chkListDietary);
@@ -903,14 +847,27 @@
             this.DietaryAdvice.Text = "Dietary Advice";
             this.DietaryAdvice.UseVisualStyleBackColor = true;
             // 
-            // dgvDiet
+            // btnSaveDietaryAdvice
             // 
-            this.dgvDiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiet.Location = new System.Drawing.Point(12, 168);
-            this.dgvDiet.Name = "dgvDiet";
-            this.dgvDiet.RowTemplate.Height = 28;
-            this.dgvDiet.Size = new System.Drawing.Size(888, 150);
-            this.dgvDiet.TabIndex = 3;
+            this.btnSaveDietaryAdvice.Location = new System.Drawing.Point(742, 115);
+            this.btnSaveDietaryAdvice.Name = "btnSaveDietaryAdvice";
+            this.btnSaveDietaryAdvice.Size = new System.Drawing.Size(133, 33);
+            this.btnSaveDietaryAdvice.TabIndex = 4;
+            this.btnSaveDietaryAdvice.Text = "Save";
+            this.btnSaveDietaryAdvice.UseVisualStyleBackColor = true;
+            this.btnSaveDietaryAdvice.Click += new System.EventHandler(this.btnSaveDietaryAdvice_Click);
+            // 
+            // gvDiet
+            // 
+            this.gvDiet.AllowUserToAddRows = false;
+            this.gvDiet.AllowUserToDeleteRows = false;
+            this.gvDiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvDiet.Location = new System.Drawing.Point(12, 168);
+            this.gvDiet.Name = "gvDiet";
+            this.gvDiet.ReadOnly = true;
+            this.gvDiet.RowTemplate.Height = 28;
+            this.gvDiet.Size = new System.Drawing.Size(888, 134);
+            this.gvDiet.TabIndex = 3;
             // 
             // label14
             // 
@@ -1012,56 +969,99 @@
             // 
             // btnSavePatient
             // 
-            this.btnSavePatient.Location = new System.Drawing.Point(957, 39);
+            this.btnSavePatient.Location = new System.Drawing.Point(773, 48);
             this.btnSavePatient.Name = "btnSavePatient";
-            this.btnSavePatient.Size = new System.Drawing.Size(140, 39);
+            this.btnSavePatient.Size = new System.Drawing.Size(140, 32);
             this.btnSavePatient.TabIndex = 1;
             this.btnSavePatient.Text = "Save Patient";
             this.btnSavePatient.UseVisualStyleBackColor = true;
             this.btnSavePatient.Click += new System.EventHandler(this.btnSavePatient_Click);
             // 
-            // button2
+            // txtPresentingComplaints
             // 
-            this.button2.Location = new System.Drawing.Point(957, 79);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 37);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtPresentingComplaints.Location = new System.Drawing.Point(208, 18);
+            this.txtPresentingComplaints.Name = "txtPresentingComplaints";
+            this.txtPresentingComplaints.Size = new System.Drawing.Size(243, 33);
+            this.txtPresentingComplaints.TabIndex = 0;
             // 
-            // gvProvDiagnosis
+            // txtPastSurgicalHistory
             // 
-            this.gvProvDiagnosis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvProvDiagnosis.Location = new System.Drawing.Point(8, 151);
-            this.gvProvDiagnosis.Name = "gvProvDiagnosis";
-            this.gvProvDiagnosis.RowTemplate.Height = 28;
-            this.gvProvDiagnosis.Size = new System.Drawing.Size(888, 150);
-            this.gvProvDiagnosis.TabIndex = 5;
+            this.txtPastSurgicalHistory.Location = new System.Drawing.Point(646, 15);
+            this.txtPastSurgicalHistory.Name = "txtPastSurgicalHistory";
+            this.txtPastSurgicalHistory.Size = new System.Drawing.Size(243, 33);
+            this.txtPastSurgicalHistory.TabIndex = 1;
             // 
-            // txtProvisionalDiagnosis
+            // txtPastMedicalHistory
             // 
-            this.txtProvisionalDiagnosis.Location = new System.Drawing.Point(201, 18);
-            this.txtProvisionalDiagnosis.Multiline = true;
-            this.txtProvisionalDiagnosis.Name = "txtProvisionalDiagnosis";
-            this.txtProvisionalDiagnosis.Size = new System.Drawing.Size(232, 83);
-            this.txtProvisionalDiagnosis.TabIndex = 6;
+            this.txtPastMedicalHistory.Location = new System.Drawing.Point(208, 57);
+            this.txtPastMedicalHistory.Name = "txtPastMedicalHistory";
+            this.txtPastMedicalHistory.Size = new System.Drawing.Size(243, 33);
+            this.txtPastMedicalHistory.TabIndex = 2;
             // 
-            // txtMedicien
+            // txtDrugsAllergies
             // 
-            this.txtMedicien.Location = new System.Drawing.Point(110, 26);
-            this.txtMedicien.Name = "txtMedicien";
-            this.txtMedicien.Size = new System.Drawing.Size(255, 33);
-            this.txtMedicien.TabIndex = 16;
+            this.txtDrugsAllergies.Location = new System.Drawing.Point(646, 54);
+            this.txtDrugsAllergies.Name = "txtDrugsAllergies";
+            this.txtDrugsAllergies.Size = new System.Drawing.Size(243, 33);
+            this.txtDrugsAllergies.TabIndex = 3;
             // 
-            // btnSaveDietaryAdvice
+            // label16
             // 
-            this.btnSaveDietaryAdvice.Location = new System.Drawing.Point(742, 115);
-            this.btnSaveDietaryAdvice.Name = "btnSaveDietaryAdvice";
-            this.btnSaveDietaryAdvice.Size = new System.Drawing.Size(133, 33);
-            this.btnSaveDietaryAdvice.TabIndex = 4;
-            this.btnSaveDietaryAdvice.Text = "Save";
-            this.btnSaveDietaryAdvice.UseVisualStyleBackColor = true;
-            this.btnSaveDietaryAdvice.Click += new System.EventHandler(this.btnSaveDietaryAdvice_Click);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(202, 25);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Presenting Complaints";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 57);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(182, 25);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Past Medical History";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(458, 18);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(183, 25);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Past Surgical History";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(458, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(140, 25);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Drugs Allergies";
+            // 
+            // btnSaveHistory
+            // 
+            this.btnSaveHistory.Location = new System.Drawing.Point(726, 103);
+            this.btnSaveHistory.Name = "btnSaveHistory";
+            this.btnSaveHistory.Size = new System.Drawing.Size(163, 33);
+            this.btnSaveHistory.TabIndex = 8;
+            this.btnSaveHistory.Text = "Save";
+            this.btnSaveHistory.UseVisualStyleBackColor = true;
+            this.btnSaveHistory.Click += new System.EventHandler(this.btnSaveHistory_Click);
+            // 
+            // gvPatientHistory
+            // 
+            this.gvPatientHistory.AllowUserToAddRows = false;
+            this.gvPatientHistory.AllowUserToDeleteRows = false;
+            this.gvPatientHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPatientHistory.Location = new System.Drawing.Point(12, 142);
+            this.gvPatientHistory.Name = "gvPatientHistory";
+            this.gvPatientHistory.ReadOnly = true;
+            this.gvPatientHistory.RowTemplate.Height = 28;
+            this.gvPatientHistory.Size = new System.Drawing.Size(877, 150);
+            this.gvPatientHistory.TabIndex = 9;
             // 
             // FrmPrescription
             // 
@@ -1069,8 +1069,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1271, 622);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnSavePatient);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1084,34 +1082,26 @@
             this.panel2.ResumeLayout(false);
             this.History.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.tabPage1.PerformLayout();
             this.Examination.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPatientExam)).EndInit();
             this.LabReports.ResumeLayout(false);
             this.LabReports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvLabReportTests)).EndInit();
             this.Diagnosis.ResumeLayout(false);
             this.Diagnosis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProvDiagnosis)).EndInit();
             this.Prescription.ResumeLayout(false);
             this.Prescription.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPrescription)).EndInit();
             this.DietaryAdvice.ResumeLayout(false);
             this.DietaryAdvice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDiet)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvProvDiagnosis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPatientHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1152,7 +1142,6 @@
         private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Label lblRemarks;
         private System.Windows.Forms.Label lblHeight;
-        private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.TextBox txtHeight;
         private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.TextBox txtPulse;
@@ -1188,27 +1177,27 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtCustomDietaryInstructions;
         private System.Windows.Forms.CheckedListBox chkListDietary;
-        private System.Windows.Forms.DataGridView dgvPrescription;
-        private System.Windows.Forms.DataGridView dgvDiet;
+        private System.Windows.Forms.DataGridView gvPrescription;
+        private System.Windows.Forms.DataGridView gvDiet;
         private System.Windows.Forms.ComboBox cmbExistingPatients;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtPastMedicalHistory;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtPresentingComplaints;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtDrugsAllergies;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtPastSurgicalHistory;
         private System.Windows.Forms.Button btnSavePatient;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnSaveHistory;
         private System.Windows.Forms.Button btnSaveExamination;
         private System.Windows.Forms.DataGridView gvProvDiagnosis;
         private System.Windows.Forms.TextBox txtProvisionalDiagnosis;
         private System.Windows.Forms.TextBox txtMedicien;
         private System.Windows.Forms.Button btnSaveDietaryAdvice;
+        private System.Windows.Forms.DataGridView gvPatientExam;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtWeight;
+        private System.Windows.Forms.TextBox txtDrugsAllergies;
+        private System.Windows.Forms.TextBox txtPastMedicalHistory;
+        private System.Windows.Forms.TextBox txtPastSurgicalHistory;
+        private System.Windows.Forms.TextBox txtPresentingComplaints;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnSaveHistory;
+        private System.Windows.Forms.DataGridView gvPatientHistory;
     }
 }

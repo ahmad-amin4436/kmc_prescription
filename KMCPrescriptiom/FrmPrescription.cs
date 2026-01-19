@@ -123,6 +123,76 @@ namespace KMCPrescriptiom
             {
                 dtVisit.Value = DateTime.Now; // or leave as-is
             }
+            DataTable PatientHistory_dt = DAL.GetData(
+                @"SELECT [HistoryId] AS ID
+                       ,[PresentComplaints]
+                       ,[PastMedical]
+                       ,[PastSurgical]
+                       ,[DrugAllergies]
+                  FROM [PatientHistory]
+                  WHERE PatientID = @PatientId",
+                new SqlParameter("@PatientId", patientId));
+            gvPatientHistory.DataSource = PatientHistory_dt;
+
+            DataTable PatientExam_dt = DAL.GetData(
+                @"SELECT [ExamId] AS ID
+                        ,[BP]
+                      ,[Temperature]
+                      ,[Weight]
+                      ,[Height]
+                      ,[SystemicExam]
+                      ,[IsNormal]
+                  FROM [PhysicalExamination]
+                  WHERE PatientId = @PatientId",
+                new SqlParameter("@PatientId", patientId));
+            gvPatientExam.DataSource = PatientExam_dt;
+
+            DataTable LabReport_dt = DAL.GetData(
+                @"SELECT [ReportId] AS ID
+                      ,[TestName]
+                      ,[ResultValue]
+                      ,[Unit]
+                      ,[NormalRange]
+                  FROM [PatientLabReports]
+                  WHERE [PatientID] = @PatientId",
+                new SqlParameter("@PatientId", patientId));
+            gvLabReportTests.DataSource = LabReport_dt;
+
+              DataTable Diagnosis_dt = DAL.GetData(
+                @"SELECT [PatientDiagnosisId] AS ID
+                      ,[DiagnosisType]
+                        ,[DiagnosisText]
+                  FROM [PatientDiagnosis]
+                  WHERE [PatientID] = @PatientId",
+                new SqlParameter("@PatientId", patientId));
+            gvProvDiagnosis.DataSource = Diagnosis_dt;
+
+             DataTable Prescription_dt = DAL.GetData(
+                @"SELECT [PrescriptionId] AS ID
+                      ,[Medicine]
+                      ,[Days]
+                      ,[Dose]
+                      ,[Instructions]
+                      ,[Morning]
+                      ,[Noon]
+                      ,[Evening]
+                      ,[Night]
+                  FROM [Prescriptions]
+                  WHERE [PatientID] = @PatientId",
+                new SqlParameter("@PatientId", patientId));
+            gvPrescription.DataSource = Prescription_dt;
+
+             DataTable Diet_dt = DAL.GetData(
+                @"SELECT [PatientDietId] AS ID
+                      ,[DietType]
+                        ,[CustomAdvice]
+                  FROM [PatientDietAdvice]
+                  WHERE [PatientID] = @PatientId",
+                new SqlParameter("@PatientId", patientId));
+            gvDiet.DataSource = Diet_dt;
+
+
+
         }
 
         // =======================
@@ -147,6 +217,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(patientId);
             }
             else
             {
@@ -184,6 +255,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(PatientID);
             }
             else
             {
@@ -224,6 +296,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(PatientID);
             }
             else
             {
@@ -262,6 +335,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(PatientID);
             }
             else
             {
@@ -298,6 +372,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(PatientID);
             }
             else
             {
@@ -339,6 +414,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(PatientID);
             }
             else
             {
@@ -380,6 +456,7 @@ namespace KMCPrescriptiom
                     MessageBoxIcon.Information);
                 ConfigurePatientCombo();
                 LoadPatientsCache();
+                LoadPatient(PatientID);
             }
             else
             {
