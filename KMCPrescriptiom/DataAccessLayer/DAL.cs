@@ -260,6 +260,31 @@ namespace KMCPrescriptiom.DataAccessLayer
                 return Convert.ToInt64(_db.GetParameterValue(cmd, "@PatientDietId"));
             }
         }
+        public static DataSet GetPatientVisitReport(long patientId)
+        {
+            DataSet ds = new DataSet();
+
+            using (DbCommand cmd = _db.GetStoredProcCommand("usp_GetPatientVisitReport"))
+            {
+                _db.AddInParameter(cmd, "@PatientID", DbType.Int64, patientId);
+
+                _db.LoadDataSet(
+                    cmd,
+                    ds,
+                    new string[]
+                    {
+                "Patient",
+                "History",
+                "PhysicalExam",
+                "Diagnosis",
+                "Prescriptions",
+                "LabReports",
+                "DietAdvice"
+                    });
+            }
+
+            return ds;
+        }
 
 
 

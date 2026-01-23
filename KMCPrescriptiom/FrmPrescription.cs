@@ -468,6 +468,11 @@ namespace KMCPrescriptiom
                 LoadPatientsCache();
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+           DataSet ds = DAL.GetPatientVisitReport(PatientID);
+        }
     }
 
     // =======================

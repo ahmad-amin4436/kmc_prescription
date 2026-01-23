@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSavePatient = new System.Windows.Forms.Button();
             this.cmbExistingPatients = new System.Windows.Forms.ComboBox();
             this.lblVisit = new System.Windows.Forms.Label();
             this.dtVisit = new System.Windows.Forms.DateTimePicker();
@@ -46,6 +47,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.History = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gvPatientHistory = new System.Windows.Forms.DataGridView();
+            this.btnSaveHistory = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtDrugsAllergies = new System.Windows.Forms.TextBox();
+            this.txtPastMedicalHistory = new System.Windows.Forms.TextBox();
+            this.txtPastSurgicalHistory = new System.Windows.Forms.TextBox();
+            this.txtPresentingComplaints = new System.Windows.Forms.TextBox();
             this.Examination = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -109,22 +120,12 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnSavePatient = new System.Windows.Forms.Button();
-            this.txtPresentingComplaints = new System.Windows.Forms.TextBox();
-            this.txtPastSurgicalHistory = new System.Windows.Forms.TextBox();
-            this.txtPastMedicalHistory = new System.Windows.Forms.TextBox();
-            this.txtDrugsAllergies = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnSaveHistory = new System.Windows.Forms.Button();
-            this.gvPatientHistory = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.History.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPatientHistory)).BeginInit();
             this.Examination.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -138,7 +139,6 @@
             this.DietaryAdvice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiet)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPatientHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -178,6 +178,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(917, 84);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSavePatient
+            // 
+            this.btnSavePatient.Location = new System.Drawing.Point(773, 48);
+            this.btnSavePatient.Name = "btnSavePatient";
+            this.btnSavePatient.Size = new System.Drawing.Size(140, 32);
+            this.btnSavePatient.TabIndex = 1;
+            this.btnSavePatient.Text = "Save";
+            this.btnSavePatient.UseVisualStyleBackColor = true;
+            this.btnSavePatient.Click += new System.EventHandler(this.btnSavePatient_Click);
             // 
             // cmbExistingPatients
             // 
@@ -332,6 +342,92 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "History";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // gvPatientHistory
+            // 
+            this.gvPatientHistory.AllowUserToAddRows = false;
+            this.gvPatientHistory.AllowUserToDeleteRows = false;
+            this.gvPatientHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPatientHistory.Location = new System.Drawing.Point(12, 142);
+            this.gvPatientHistory.Name = "gvPatientHistory";
+            this.gvPatientHistory.ReadOnly = true;
+            this.gvPatientHistory.RowTemplate.Height = 28;
+            this.gvPatientHistory.Size = new System.Drawing.Size(877, 150);
+            this.gvPatientHistory.TabIndex = 9;
+            // 
+            // btnSaveHistory
+            // 
+            this.btnSaveHistory.Location = new System.Drawing.Point(726, 103);
+            this.btnSaveHistory.Name = "btnSaveHistory";
+            this.btnSaveHistory.Size = new System.Drawing.Size(163, 33);
+            this.btnSaveHistory.TabIndex = 8;
+            this.btnSaveHistory.Text = "Save";
+            this.btnSaveHistory.UseVisualStyleBackColor = true;
+            this.btnSaveHistory.Click += new System.EventHandler(this.btnSaveHistory_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(458, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(140, 25);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Drugs Allergies";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(458, 18);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(183, 25);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Past Surgical History";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 57);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(182, 25);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Past Medical History";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(202, 25);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Presenting Complaints";
+            // 
+            // txtDrugsAllergies
+            // 
+            this.txtDrugsAllergies.Location = new System.Drawing.Point(646, 54);
+            this.txtDrugsAllergies.Name = "txtDrugsAllergies";
+            this.txtDrugsAllergies.Size = new System.Drawing.Size(243, 33);
+            this.txtDrugsAllergies.TabIndex = 3;
+            // 
+            // txtPastMedicalHistory
+            // 
+            this.txtPastMedicalHistory.Location = new System.Drawing.Point(208, 57);
+            this.txtPastMedicalHistory.Name = "txtPastMedicalHistory";
+            this.txtPastMedicalHistory.Size = new System.Drawing.Size(243, 33);
+            this.txtPastMedicalHistory.TabIndex = 2;
+            // 
+            // txtPastSurgicalHistory
+            // 
+            this.txtPastSurgicalHistory.Location = new System.Drawing.Point(646, 15);
+            this.txtPastSurgicalHistory.Name = "txtPastSurgicalHistory";
+            this.txtPastSurgicalHistory.Size = new System.Drawing.Size(243, 33);
+            this.txtPastSurgicalHistory.TabIndex = 1;
+            // 
+            // txtPresentingComplaints
+            // 
+            this.txtPresentingComplaints.Location = new System.Drawing.Point(208, 18);
+            this.txtPresentingComplaints.Name = "txtPresentingComplaints";
+            this.txtPresentingComplaints.Size = new System.Drawing.Size(243, 33);
+            this.txtPresentingComplaints.TabIndex = 0;
             // 
             // Examination
             // 
@@ -944,6 +1040,7 @@
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSave
             // 
@@ -967,102 +1064,6 @@
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = false;
             // 
-            // btnSavePatient
-            // 
-            this.btnSavePatient.Location = new System.Drawing.Point(773, 48);
-            this.btnSavePatient.Name = "btnSavePatient";
-            this.btnSavePatient.Size = new System.Drawing.Size(140, 32);
-            this.btnSavePatient.TabIndex = 1;
-            this.btnSavePatient.Text = "Save Patient";
-            this.btnSavePatient.UseVisualStyleBackColor = true;
-            this.btnSavePatient.Click += new System.EventHandler(this.btnSavePatient_Click);
-            // 
-            // txtPresentingComplaints
-            // 
-            this.txtPresentingComplaints.Location = new System.Drawing.Point(208, 18);
-            this.txtPresentingComplaints.Name = "txtPresentingComplaints";
-            this.txtPresentingComplaints.Size = new System.Drawing.Size(243, 33);
-            this.txtPresentingComplaints.TabIndex = 0;
-            // 
-            // txtPastSurgicalHistory
-            // 
-            this.txtPastSurgicalHistory.Location = new System.Drawing.Point(646, 15);
-            this.txtPastSurgicalHistory.Name = "txtPastSurgicalHistory";
-            this.txtPastSurgicalHistory.Size = new System.Drawing.Size(243, 33);
-            this.txtPastSurgicalHistory.TabIndex = 1;
-            // 
-            // txtPastMedicalHistory
-            // 
-            this.txtPastMedicalHistory.Location = new System.Drawing.Point(208, 57);
-            this.txtPastMedicalHistory.Name = "txtPastMedicalHistory";
-            this.txtPastMedicalHistory.Size = new System.Drawing.Size(243, 33);
-            this.txtPastMedicalHistory.TabIndex = 2;
-            // 
-            // txtDrugsAllergies
-            // 
-            this.txtDrugsAllergies.Location = new System.Drawing.Point(646, 54);
-            this.txtDrugsAllergies.Name = "txtDrugsAllergies";
-            this.txtDrugsAllergies.Size = new System.Drawing.Size(243, 33);
-            this.txtDrugsAllergies.TabIndex = 3;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(202, 25);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Presenting Complaints";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 57);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(182, 25);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Past Medical History";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(458, 18);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(183, 25);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "Past Surgical History";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(458, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(140, 25);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "Drugs Allergies";
-            // 
-            // btnSaveHistory
-            // 
-            this.btnSaveHistory.Location = new System.Drawing.Point(726, 103);
-            this.btnSaveHistory.Name = "btnSaveHistory";
-            this.btnSaveHistory.Size = new System.Drawing.Size(163, 33);
-            this.btnSaveHistory.TabIndex = 8;
-            this.btnSaveHistory.Text = "Save";
-            this.btnSaveHistory.UseVisualStyleBackColor = true;
-            this.btnSaveHistory.Click += new System.EventHandler(this.btnSaveHistory_Click);
-            // 
-            // gvPatientHistory
-            // 
-            this.gvPatientHistory.AllowUserToAddRows = false;
-            this.gvPatientHistory.AllowUserToDeleteRows = false;
-            this.gvPatientHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPatientHistory.Location = new System.Drawing.Point(12, 142);
-            this.gvPatientHistory.Name = "gvPatientHistory";
-            this.gvPatientHistory.ReadOnly = true;
-            this.gvPatientHistory.RowTemplate.Height = 28;
-            this.gvPatientHistory.Size = new System.Drawing.Size(877, 150);
-            this.gvPatientHistory.TabIndex = 9;
-            // 
             // FrmPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -1083,6 +1084,7 @@
             this.History.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPatientHistory)).EndInit();
             this.Examination.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -1101,7 +1103,6 @@
             this.DietaryAdvice.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiet)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvPatientHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
