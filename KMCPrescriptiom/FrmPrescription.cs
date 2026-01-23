@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using KMCPrescriptiom.DataAccessLayer;
 using System.Linq;
+using KMCPrescriptiom.Dataset;
 
 namespace KMCPrescriptiom
 {
@@ -471,7 +472,7 @@ namespace KMCPrescriptiom
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-           DataSet ds = DAL.GetPatientVisitReport(PatientID);
+           Prescription ds = DAL.GetPatientVisitReport(PatientID);
         }
     }
 

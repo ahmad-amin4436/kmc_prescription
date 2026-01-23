@@ -53,6 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessLayer\DAL.cs" />
+    <Compile Include="Dataset\Prescription.cs">
+      <DependentUpon>Prescription.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\Prescription.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prescription.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrescription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +81,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Dataset\Prescription.xsc">
+      <DependentUpon>Prescription.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\Prescription.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Prescription.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\Prescription.xss">
+      <DependentUpon>Prescription.xsd</DependentUpon>
+    </None>
     <None Include="DBBack\KMC" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
