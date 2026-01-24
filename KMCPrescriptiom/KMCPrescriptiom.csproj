@@ -83,6 +83,7 @@
       <HintPath>..\packages\CrystalReports.ReportAppServer.XmlSerialize.13.0.3500\lib\net20\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalReports.Shared.13.0.3500\lib\net20\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
@@ -110,6 +111,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bin\Debug\Reports\Prescription.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prescription.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataAccessLayer\DAL.cs" />
     <Compile Include="Dataset\Prescription.cs">
       <DependentUpon>Prescription.xsd</DependentUpon>
@@ -125,8 +132,21 @@
     <Compile Include="FrmPrescription.Designer.cs">
       <DependentUpon>FrmPrescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Prescription.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prescription.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="bin\Debug\Reports\Prescription.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Prescription.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrescription.resx">
       <DependentUpon>FrmPrescription.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +159,88 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Prescription.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Prescription.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="bin\Debug\KMCPrescriptiom.exe.config" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123185132.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123185937.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123190506.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123190542.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123190609.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102343.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102553.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102653.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102706.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102730.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102805.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103132.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103150.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103442.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103633.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124104554.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124104647.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124104855.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105105.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105249.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105333.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105404.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105446.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105514.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105541.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105612.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105654.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105721.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105757.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105815.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105831.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105909.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110117.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110149.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110228.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110402.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110439.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110621.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110719.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110820.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110835.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110849.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110938.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111019.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111054.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111210.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111340.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111406.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111506.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111621.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111744.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111822.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111843.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111920.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124112010.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122306.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122529.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122601.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122707.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122736.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122809.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122836.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122914.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124123037.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124123241.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124123345.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160234.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160319.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160428.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160539.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160633.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160712.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160728.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161532.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161637.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161831.pdf" />
+    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161943.pdf" />
     <None Include="Dataset\Prescription.xsc">
       <DependentUpon>Prescription.xsd</DependentUpon>
     </None>
@@ -166,12 +268,68 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Reports\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\IconsList %281%29.png" />
     <Content Include="Assets\ReportHeader %281%29.png" />
     <Content Include="Assets\ReportHeader.png" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\cs\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\cs\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\da\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\da\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\de\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\de\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\en\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\en\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\es\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\es\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\fi\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\fi\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\fr\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\fr\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\hu\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\hu\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\it\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\it\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\ja\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\ja\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\KMCPrescriptiom.exe" />
+    <Content Include="bin\Debug\KMCPrescriptiom.pdb" />
+    <Content Include="bin\Debug\ko\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\ko\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\log4net.xml" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Debug\nb-NO\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\nb-NO\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\nl\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\nl\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\pl\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\pl\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\pt\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\pt\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\ru\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\ru\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\sk\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\sk\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\sv\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\sv\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\th\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\th\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\tr\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\tr\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\CrystalDecisions.Shared.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\CrystalDecisions.CrystalReports.Engine.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\CrystalDecisions.Shared.resources.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
