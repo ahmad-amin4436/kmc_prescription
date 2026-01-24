@@ -5,6 +5,11 @@ using System.Data.SqlClient;
 using KMCPrescriptiom.DataAccessLayer;
 using System.Linq;
 using KMCPrescriptiom.Dataset;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using System.Diagnostics;
+using System.IO;
+
 
 namespace KMCPrescriptiom
 {
@@ -472,8 +477,59 @@ namespace KMCPrescriptiom
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-           Prescription ds = DAL.GetPatientVisitReport(PatientID);
+            // 1️⃣ Get typed dataset
+            Prescription ds = DAL.GetPatientVisitReport(PatientID);
+
+            if (ds == null || ds.Tables["Patient"].Rows.Count == 0)
+            {
+                MessageBox.Show("No data found for this patient.");
+                return;
+            }
+
+            // 2️⃣ Load report
+            ReportDocument rpt = new ReportDocument();
+
+            string reportPath = Path.Combine(
+                Application.StartupPath,
+                @"Reports\Prescription.rpt"
+            );
+
+            rpt.Load(reportPath);
+
+            // 3️⃣ Assign typed dataset
+            rpt.SetDataSource(ds);
+
+            // 4️⃣ A4 page setup
+            rpt.PrintOptions.PaperSize = PaperSize.PaperA4;
+            rpt.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
+
+            // 5️⃣ Export PDF
+            string pdfName = $"Prescription_{PatientID}_{DateTime.Now:yyyyMMddHHmmss}.pdf";
+            string pdfPath = Path.Combine(
+                Application.StartupPath,
+                @"Reports\Generated",
+                pdfName
+            );
+
+            Directory.CreateDirectory(Path.GetDirectoryName(pdfPath));
+
+            rpt.ExportToDisk(
+                ExportFormatType.PortableDocFormat,
+                pdfPath
+            );
+
+            rpt.Close();
+            rpt.Dispose();
+
+            // 6️⃣ Open PDF automatically
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = pdfPath,
+                UseShellExecute = true
+            });
         }
+
+
     }
 
     // =======================
