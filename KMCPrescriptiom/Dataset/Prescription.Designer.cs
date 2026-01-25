@@ -1169,6 +1169,12 @@ namespace KMCPrescriptiom.Dataset {
             
             private global::System.Data.DataColumn columnIsNormal;
             
+            private global::System.Data.DataColumn columnSugar;
+            
+            private global::System.Data.DataColumn columnBreath;
+            
+            private global::System.Data.DataColumn columnHeartBeat;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PhysicalExamDataTable() {
@@ -1276,6 +1282,30 @@ namespace KMCPrescriptiom.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SugarColumn {
+                get {
+                    return this.columnSugar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn BreathColumn {
+                get {
+                    return this.columnBreath;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn HeartBeatColumn {
+                get {
+                    return this.columnHeartBeat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1311,7 +1341,7 @@ namespace KMCPrescriptiom.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PhysicalExamRow AddPhysicalExamRow(string ExamId, string PatientID, string BP, string Pulse, string Temperature, string Weight, string Height, string SystemicExam, string IsNormal) {
+            public PhysicalExamRow AddPhysicalExamRow(string ExamId, string PatientID, string BP, string Pulse, string Temperature, string Weight, string Height, string SystemicExam, string IsNormal, string Sugar, string Breath, string HeartBeat) {
                 PhysicalExamRow rowPhysicalExamRow = ((PhysicalExamRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ExamId,
@@ -1322,7 +1352,10 @@ namespace KMCPrescriptiom.Dataset {
                         Weight,
                         Height,
                         SystemicExam,
-                        IsNormal};
+                        IsNormal,
+                        Sugar,
+                        Breath,
+                        HeartBeat};
                 rowPhysicalExamRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhysicalExamRow);
                 return rowPhysicalExamRow;
@@ -1354,6 +1387,9 @@ namespace KMCPrescriptiom.Dataset {
                 this.columnHeight = base.Columns["Height"];
                 this.columnSystemicExam = base.Columns["SystemicExam"];
                 this.columnIsNormal = base.Columns["IsNormal"];
+                this.columnSugar = base.Columns["Sugar"];
+                this.columnBreath = base.Columns["Breath"];
+                this.columnHeartBeat = base.Columns["HeartBeat"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1377,6 +1413,12 @@ namespace KMCPrescriptiom.Dataset {
                 base.Columns.Add(this.columnSystemicExam);
                 this.columnIsNormal = new global::System.Data.DataColumn("IsNormal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsNormal);
+                this.columnSugar = new global::System.Data.DataColumn("Sugar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSugar);
+                this.columnBreath = new global::System.Data.DataColumn("Breath", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBreath);
+                this.columnHeartBeat = new global::System.Data.DataColumn("HeartBeat", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHeartBeat);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3353,6 +3395,54 @@ namespace KMCPrescriptiom.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Sugar {
+                get {
+                    try {
+                        return ((string)(this[this.tablePhysicalExam.SugarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sugar\' in table \'PhysicalExam\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePhysicalExam.SugarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Breath {
+                get {
+                    try {
+                        return ((string)(this[this.tablePhysicalExam.BreathColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Breath\' in table \'PhysicalExam\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePhysicalExam.BreathColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string HeartBeat {
+                get {
+                    try {
+                        return ((string)(this[this.tablePhysicalExam.HeartBeatColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HeartBeat\' in table \'PhysicalExam\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePhysicalExam.HeartBeatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsExamIdNull() {
                 return this.IsNull(this.tablePhysicalExam.ExamIdColumn);
             }
@@ -3457,6 +3547,42 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetIsNormalNull() {
                 this[this.tablePhysicalExam.IsNormalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSugarNull() {
+                return this.IsNull(this.tablePhysicalExam.SugarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSugarNull() {
+                this[this.tablePhysicalExam.SugarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBreathNull() {
+                return this.IsNull(this.tablePhysicalExam.BreathColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBreathNull() {
+                this[this.tablePhysicalExam.BreathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsHeartBeatNull() {
+                return this.IsNull(this.tablePhysicalExam.HeartBeatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetHeartBeatNull() {
+                this[this.tablePhysicalExam.HeartBeatColumn] = global::System.Convert.DBNull;
             }
         }
         

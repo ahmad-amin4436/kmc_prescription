@@ -66,9 +66,15 @@
             this.btnSaveExamination = new System.Windows.Forms.Button();
             this.txtRemarksSysExam = new System.Windows.Forms.TextBox();
             this.chkNormal = new System.Windows.Forms.CheckBox();
+            this.txtBreath = new System.Windows.Forms.TextBox();
+            this.txtSugar = new System.Windows.Forms.TextBox();
+            this.txtHeartBeat = new System.Windows.Forms.TextBox();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.txtTemp = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.txtPulse = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtBP = new System.Windows.Forms.TextBox();
             this.lblHeight = new System.Windows.Forms.Label();
             this.lblRemarks = new System.Windows.Forms.Label();
@@ -456,9 +462,15 @@
             this.panel6.Controls.Add(this.btnSaveExamination);
             this.panel6.Controls.Add(this.txtRemarksSysExam);
             this.panel6.Controls.Add(this.chkNormal);
+            this.panel6.Controls.Add(this.txtBreath);
+            this.panel6.Controls.Add(this.txtSugar);
+            this.panel6.Controls.Add(this.txtHeartBeat);
             this.panel6.Controls.Add(this.txtHeight);
             this.panel6.Controls.Add(this.txtTemp);
+            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.label21);
             this.panel6.Controls.Add(this.txtPulse);
+            this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.txtBP);
             this.panel6.Controls.Add(this.lblHeight);
             this.panel6.Controls.Add(this.lblRemarks);
@@ -483,7 +495,7 @@
             // 
             this.txtWeight.Location = new System.Drawing.Point(81, 77);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(145, 33);
+            this.txtWeight.Size = new System.Drawing.Size(61, 33);
             this.txtWeight.TabIndex = 11;
             // 
             // gvPatientExam
@@ -500,9 +512,9 @@
             // 
             // btnSaveExamination
             // 
-            this.btnSaveExamination.Location = new System.Drawing.Point(715, 93);
+            this.btnSaveExamination.Location = new System.Drawing.Point(755, 93);
             this.btnSaveExamination.Name = "btnSaveExamination";
-            this.btnSaveExamination.Size = new System.Drawing.Size(145, 35);
+            this.btnSaveExamination.Size = new System.Drawing.Size(105, 35);
             this.btnSaveExamination.TabIndex = 9;
             this.btnSaveExamination.Text = "Save";
             this.btnSaveExamination.UseVisualStyleBackColor = true;
@@ -510,7 +522,7 @@
             // 
             // txtRemarksSysExam
             // 
-            this.txtRemarksSysExam.Location = new System.Drawing.Point(377, 73);
+            this.txtRemarksSysExam.Location = new System.Drawing.Point(421, 73);
             this.txtRemarksSysExam.Multiline = true;
             this.txtRemarksSysExam.Name = "txtRemarksSysExam";
             this.txtRemarksSysExam.Size = new System.Drawing.Size(321, 72);
@@ -526,38 +538,86 @@
             this.chkNormal.Text = "Normal Examination";
             this.chkNormal.UseVisualStyleBackColor = true;
             // 
+            // txtBreath
+            // 
+            this.txtBreath.Location = new System.Drawing.Point(222, 77);
+            this.txtBreath.Name = "txtBreath";
+            this.txtBreath.Size = new System.Drawing.Size(93, 33);
+            this.txtBreath.TabIndex = 5;
+            // 
+            // txtSugar
+            // 
+            this.txtSugar.Location = new System.Drawing.Point(749, 20);
+            this.txtSugar.Name = "txtSugar";
+            this.txtSugar.Size = new System.Drawing.Size(79, 33);
+            this.txtSugar.TabIndex = 5;
+            // 
+            // txtHeartBeat
+            // 
+            this.txtHeartBeat.Location = new System.Drawing.Point(608, 20);
+            this.txtHeartBeat.Name = "txtHeartBeat";
+            this.txtHeartBeat.Size = new System.Drawing.Size(61, 33);
+            this.txtHeartBeat.TabIndex = 5;
+            // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(715, 25);
+            this.txtHeight.Location = new System.Drawing.Point(462, 22);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(145, 33);
+            this.txtHeight.Size = new System.Drawing.Size(61, 33);
             this.txtHeight.TabIndex = 5;
             // 
             // txtTemp
             // 
-            this.txtTemp.Location = new System.Drawing.Point(485, 25);
+            this.txtTemp.Location = new System.Drawing.Point(321, 22);
             this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(145, 33);
+            this.txtTemp.Size = new System.Drawing.Size(61, 33);
             this.txtTemp.TabIndex = 4;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(148, 80);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(67, 25);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Breath";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(675, 23);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 25);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Sugar";
             // 
             // txtPulse
             // 
-            this.txtPulse.Location = new System.Drawing.Point(269, 25);
+            this.txtPulse.Location = new System.Drawing.Point(191, 25);
             this.txtPulse.Name = "txtPulse";
-            this.txtPulse.Size = new System.Drawing.Size(145, 33);
+            this.txtPulse.Size = new System.Drawing.Size(61, 33);
             this.txtPulse.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(534, 23);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 25);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Heart";
             // 
             // txtBP
             // 
             this.txtBP.Location = new System.Drawing.Point(65, 25);
             this.txtBP.Name = "txtBP";
-            this.txtBP.Size = new System.Drawing.Size(145, 33);
+            this.txtBP.Size = new System.Drawing.Size(61, 33);
             this.txtBP.TabIndex = 2;
             // 
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(641, 28);
+            this.lblHeight.Location = new System.Drawing.Point(388, 25);
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(68, 25);
             this.lblHeight.TabIndex = 1;
@@ -566,16 +626,16 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(235, 93);
+            this.lblRemarks.Location = new System.Drawing.Point(333, 98);
             this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.Size = new System.Drawing.Size(136, 25);
+            this.lblRemarks.Size = new System.Drawing.Size(82, 25);
             this.lblRemarks.TabIndex = 1;
-            this.lblRemarks.Text = "Remarks Exam.";
+            this.lblRemarks.Text = "Remarks";
             // 
             // lblTemp
             // 
             this.lblTemp.AutoSize = true;
-            this.lblTemp.Location = new System.Drawing.Point(422, 28);
+            this.lblTemp.Location = new System.Drawing.Point(258, 25);
             this.lblTemp.Name = "lblTemp";
             this.lblTemp.Size = new System.Drawing.Size(57, 25);
             this.lblTemp.TabIndex = 1;
@@ -584,7 +644,7 @@
             // lblPulse
             // 
             this.lblPulse.AutoSize = true;
-            this.lblPulse.Location = new System.Drawing.Point(215, 28);
+            this.lblPulse.Location = new System.Drawing.Point(137, 28);
             this.lblPulse.Name = "lblPulse";
             this.lblPulse.Size = new System.Drawing.Size(57, 25);
             this.lblPulse.TabIndex = 1;
@@ -1200,5 +1260,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnSaveHistory;
         private System.Windows.Forms.DataGridView gvPatientHistory;
+        private System.Windows.Forms.TextBox txtSugar;
+        private System.Windows.Forms.TextBox txtHeartBeat;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtBreath;
+        private System.Windows.Forms.Label label22;
     }
 }

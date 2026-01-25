@@ -285,14 +285,18 @@ namespace KMCPrescriptiom
                 return;
             }
             long PhysicalExamID = DAL.SavePhysicalExamination(
-             PatientID,
-             txtBP.Text,
-             txtPulse.Text,
-             txtTemp.Text,
-             txtWeight.Text,
-             txtHeight.Text,
-             txtRemarksSysExam.Text,
-             chkNormal.Checked);
+      PatientID,
+      txtBP.Text,
+      txtPulse.Text,
+      txtTemp.Text,
+      txtWeight.Text,
+      txtHeight.Text,
+      txtRemarksSysExam.Text,
+      chkNormal.Checked,
+      txtHeartBeat.Text,
+      txtBreath.Text,
+      txtSugar.Text
+  );
 
             if (PhysicalExamID > 0)
             {

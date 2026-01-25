@@ -113,8 +113,12 @@ namespace KMCPrescriptiom.DataAccessLayer
     string Height,
     string SystemicExam,
     bool IsNormal,
+    string HeartBeat,
+    string Breath,
+    string Sugar,
     long? ExamId = null
 )
+
         {
             using (DbCommand cmd = _db.GetStoredProcCommand("usp_SavePhysicalExamination"))
             {
@@ -126,6 +130,9 @@ namespace KMCPrescriptiom.DataAccessLayer
                 _db.AddInParameter(cmd, "@Height", DbType.String, Height ?? string.Empty);
                 _db.AddInParameter(cmd, "@SystemicExam", DbType.String, SystemicExam ?? string.Empty);
                 _db.AddInParameter(cmd, "@IsNormal", DbType.Boolean, IsNormal);
+                _db.AddInParameter(cmd, "@HeartBeat", DbType.String, HeartBeat);
+                _db.AddInParameter(cmd, "@Breath", DbType.String, Breath);
+                _db.AddInParameter(cmd, "@Sugar", DbType.String, Sugar);
 
                 // Single OUTPUT parameter
                 _db.AddOutParameter(cmd, "@ExamId", DbType.Int64, 8);

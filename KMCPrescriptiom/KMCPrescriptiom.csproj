@@ -164,83 +164,6 @@
       <LastGenOutput>Prescription.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\KMCPrescriptiom.exe.config" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123185132.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123185937.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123190506.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123190542.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260123190609.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102343.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102553.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102653.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102706.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102730.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124102805.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103132.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103150.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103442.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124103633.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124104554.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124104647.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124104855.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105105.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105249.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105333.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105404.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105446.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105514.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105541.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105612.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105654.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105721.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105757.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105815.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105831.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124105909.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110117.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110149.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110228.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110402.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110439.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110621.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110719.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110820.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110835.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110849.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124110938.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111019.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111054.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111210.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111340.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111406.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111506.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111621.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111744.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111822.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111843.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124111920.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124112010.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122306.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122529.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122601.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122707.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122736.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122809.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122836.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124122914.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124123037.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124123241.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124123345.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160234.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160319.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160428.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160539.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160633.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160712.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124160728.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161532.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161637.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161831.pdf" />
-    <None Include="bin\Debug\Reports\Generated\Prescription_4_20260124161943.pdf" />
     <None Include="Dataset\Prescription.xsc">
       <DependentUpon>Prescription.xsd</DependentUpon>
     </None>
@@ -268,6 +191,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\Reports\Generated\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
