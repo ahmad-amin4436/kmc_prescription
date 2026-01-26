@@ -2831,11 +2831,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientId {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.PatientIdColumn]));
+                    if (this.IsPatientIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientId\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.PatientIdColumn]));
                     }
                 }
                 set {
@@ -2847,11 +2847,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string MRNo {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.MRNoColumn]));
+                    if (this.IsMRNoNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MRNo\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.MRNoColumn]));
                     }
                 }
                 set {
@@ -2863,11 +2863,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string FullName {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.FullNameColumn]));
+                    if (this.IsFullNameNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FullName\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.FullNameColumn]));
                     }
                 }
                 set {
@@ -2879,11 +2879,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Age {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.AgeColumn]));
+                    if (this.IsAgeNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Age\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.AgeColumn]));
                     }
                 }
                 set {
@@ -2895,11 +2895,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Gender {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.GenderColumn]));
+                    if (this.IsGenderNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.GenderColumn]));
                     }
                 }
                 set {
@@ -2911,11 +2911,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ContactNo {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.ContactNoColumn]));
+                    if (this.IsContactNoNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ContactNo\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.ContactNoColumn]));
                     }
                 }
                 set {
@@ -2927,11 +2927,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string CreatedDate {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.CreatedDateColumn]));
+                    if (this.IsCreatedDateNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.CreatedDateColumn]));
                     }
                 }
                 set {
@@ -2943,11 +2943,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Visit {
                 get {
-                    try {
-                        return ((string)(this[this.tablePatient.VisitColumn]));
+                    if (this.IsVisitNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Visit\' in table \'Patient\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePatient.VisitColumn]));
                     }
                 }
                 set {
@@ -3070,11 +3070,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string HistoryId {
                 get {
-                    try {
-                        return ((string)(this[this.tableHistory.HistoryIdColumn]));
+                    if (this.IsHistoryIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HistoryId\' in table \'History\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHistory.HistoryIdColumn]));
                     }
                 }
                 set {
@@ -3086,11 +3086,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientID {
                 get {
-                    try {
-                        return ((string)(this[this.tableHistory.PatientIDColumn]));
+                    if (this.IsPatientIDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientID\' in table \'History\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHistory.PatientIDColumn]));
                     }
                 }
                 set {
@@ -3102,11 +3102,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PresentComplaints {
                 get {
-                    try {
-                        return ((string)(this[this.tableHistory.PresentComplaintsColumn]));
+                    if (this.IsPresentComplaintsNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PresentComplaints\' in table \'History\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHistory.PresentComplaintsColumn]));
                     }
                 }
                 set {
@@ -3118,11 +3118,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PastMedical {
                 get {
-                    try {
-                        return ((string)(this[this.tableHistory.PastMedicalColumn]));
+                    if (this.IsPastMedicalNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PastMedical\' in table \'History\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHistory.PastMedicalColumn]));
                     }
                 }
                 set {
@@ -3134,11 +3134,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PastSurgical {
                 get {
-                    try {
-                        return ((string)(this[this.tableHistory.PastSurgicalColumn]));
+                    if (this.IsPastSurgicalNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PastSurgical\' in table \'History\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHistory.PastSurgicalColumn]));
                     }
                 }
                 set {
@@ -3150,11 +3150,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string DrugAllergies {
                 get {
-                    try {
-                        return ((string)(this[this.tableHistory.DrugAllergiesColumn]));
+                    if (this.IsDrugAllergiesNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DrugAllergies\' in table \'History\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHistory.DrugAllergiesColumn]));
                     }
                 }
                 set {
@@ -3253,11 +3253,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ExamId {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.ExamIdColumn]));
+                    if (this.IsExamIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExamId\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.ExamIdColumn]));
                     }
                 }
                 set {
@@ -3269,11 +3269,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientID {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.PatientIDColumn]));
+                    if (this.IsPatientIDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientID\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.PatientIDColumn]));
                     }
                 }
                 set {
@@ -3285,11 +3285,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string BP {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.BPColumn]));
+                    if (this.IsBPNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BP\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.BPColumn]));
                     }
                 }
                 set {
@@ -3301,11 +3301,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Pulse {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.PulseColumn]));
+                    if (this.IsPulseNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Pulse\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.PulseColumn]));
                     }
                 }
                 set {
@@ -3317,11 +3317,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Temperature {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.TemperatureColumn]));
+                    if (this.IsTemperatureNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Temperature\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.TemperatureColumn]));
                     }
                 }
                 set {
@@ -3333,11 +3333,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Weight {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.WeightColumn]));
+                    if (this.IsWeightNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Weight\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.WeightColumn]));
                     }
                 }
                 set {
@@ -3349,11 +3349,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Height {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.HeightColumn]));
+                    if (this.IsHeightNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Height\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.HeightColumn]));
                     }
                 }
                 set {
@@ -3365,11 +3365,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SystemicExam {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.SystemicExamColumn]));
+                    if (this.IsSystemicExamNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SystemicExam\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.SystemicExamColumn]));
                     }
                 }
                 set {
@@ -3381,11 +3381,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string IsNormal {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.IsNormalColumn]));
+                    if (this.IsIsNormalNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IsNormal\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.IsNormalColumn]));
                     }
                 }
                 set {
@@ -3397,11 +3397,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Sugar {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.SugarColumn]));
+                    if (this.IsSugarNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sugar\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.SugarColumn]));
                     }
                 }
                 set {
@@ -3413,11 +3413,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Breath {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.BreathColumn]));
+                    if (this.IsBreathNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Breath\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.BreathColumn]));
                     }
                 }
                 set {
@@ -3429,11 +3429,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string HeartBeat {
                 get {
-                    try {
-                        return ((string)(this[this.tablePhysicalExam.HeartBeatColumn]));
+                    if (this.IsHeartBeatNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HeartBeat\' in table \'PhysicalExam\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePhysicalExam.HeartBeatColumn]));
                     }
                 }
                 set {
@@ -3604,11 +3604,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientDiagnosisId {
                 get {
-                    try {
-                        return ((string)(this[this.tableDiagnosis.PatientDiagnosisIdColumn]));
+                    if (this.IsPatientDiagnosisIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientDiagnosisId\' in table \'Diagnosis\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDiagnosis.PatientDiagnosisIdColumn]));
                     }
                 }
                 set {
@@ -3620,11 +3620,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientID {
                 get {
-                    try {
-                        return ((string)(this[this.tableDiagnosis.PatientIDColumn]));
+                    if (this.IsPatientIDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientID\' in table \'Diagnosis\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDiagnosis.PatientIDColumn]));
                     }
                 }
                 set {
@@ -3636,11 +3636,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string DiagnosisType {
                 get {
-                    try {
-                        return ((string)(this[this.tableDiagnosis.DiagnosisTypeColumn]));
+                    if (this.IsDiagnosisTypeNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiagnosisType\' in table \'Diagnosis\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDiagnosis.DiagnosisTypeColumn]));
                     }
                 }
                 set {
@@ -3652,11 +3652,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string DiagnosisText {
                 get {
-                    try {
-                        return ((string)(this[this.tableDiagnosis.DiagnosisTextColumn]));
+                    if (this.IsDiagnosisTextNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiagnosisText\' in table \'Diagnosis\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDiagnosis.DiagnosisTextColumn]));
                     }
                 }
                 set {
@@ -3731,11 +3731,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PrescriptionId {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.PrescriptionIdColumn]));
+                    if (this.IsPrescriptionIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrescriptionId\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.PrescriptionIdColumn]));
                     }
                 }
                 set {
@@ -3747,11 +3747,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientID {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.PatientIDColumn]));
+                    if (this.IsPatientIDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientID\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.PatientIDColumn]));
                     }
                 }
                 set {
@@ -3763,11 +3763,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Medicine {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.MedicineColumn]));
+                    if (this.IsMedicineNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Medicine\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.MedicineColumn]));
                     }
                 }
                 set {
@@ -3779,11 +3779,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Days {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.DaysColumn]));
+                    if (this.IsDaysNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Days\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.DaysColumn]));
                     }
                 }
                 set {
@@ -3795,11 +3795,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Dose {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.DoseColumn]));
+                    if (this.IsDoseNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Dose\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.DoseColumn]));
                     }
                 }
                 set {
@@ -3811,11 +3811,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Instructions {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.InstructionsColumn]));
+                    if (this.IsInstructionsNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Instructions\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.InstructionsColumn]));
                     }
                 }
                 set {
@@ -3827,11 +3827,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Morning {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.MorningColumn]));
+                    if (this.IsMorningNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Morning\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.MorningColumn]));
                     }
                 }
                 set {
@@ -3843,11 +3843,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Noon {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.NoonColumn]));
+                    if (this.IsNoonNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Noon\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.NoonColumn]));
                     }
                 }
                 set {
@@ -3859,11 +3859,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Evening {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.EveningColumn]));
+                    if (this.IsEveningNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Evening\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.EveningColumn]));
                     }
                 }
                 set {
@@ -3875,11 +3875,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Night {
                 get {
-                    try {
-                        return ((string)(this[this.tablePrescriptions.NightColumn]));
+                    if (this.IsNightNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Night\' in table \'Prescriptions\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablePrescriptions.NightColumn]));
                     }
                 }
                 set {
@@ -4026,11 +4026,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ReportId {
                 get {
-                    try {
-                        return ((string)(this[this.tableLabReports.ReportIdColumn]));
+                    if (this.IsReportIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReportId\' in table \'LabReports\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableLabReports.ReportIdColumn]));
                     }
                 }
                 set {
@@ -4042,11 +4042,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientID {
                 get {
-                    try {
-                        return ((string)(this[this.tableLabReports.PatientIDColumn]));
+                    if (this.IsPatientIDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientID\' in table \'LabReports\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableLabReports.PatientIDColumn]));
                     }
                 }
                 set {
@@ -4058,11 +4058,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string TestName {
                 get {
-                    try {
-                        return ((string)(this[this.tableLabReports.TestNameColumn]));
+                    if (this.IsTestNameNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TestName\' in table \'LabReports\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableLabReports.TestNameColumn]));
                     }
                 }
                 set {
@@ -4074,11 +4074,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ResultValue {
                 get {
-                    try {
-                        return ((string)(this[this.tableLabReports.ResultValueColumn]));
+                    if (this.IsResultValueNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ResultValue\' in table \'LabReports\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableLabReports.ResultValueColumn]));
                     }
                 }
                 set {
@@ -4090,11 +4090,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Unit {
                 get {
-                    try {
-                        return ((string)(this[this.tableLabReports.UnitColumn]));
+                    if (this.IsUnitNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Unit\' in table \'LabReports\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableLabReports.UnitColumn]));
                     }
                 }
                 set {
@@ -4106,11 +4106,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string NormalRange {
                 get {
-                    try {
-                        return ((string)(this[this.tableLabReports.NormalRangeColumn]));
+                    if (this.IsNormalRangeNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NormalRange\' in table \'LabReports\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableLabReports.NormalRangeColumn]));
                     }
                 }
                 set {
@@ -4209,11 +4209,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientDietId {
                 get {
-                    try {
-                        return ((string)(this[this.tableDietAdvice.PatientDietIdColumn]));
+                    if (this.IsPatientDietIdNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientDietId\' in table \'DietAdvice\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDietAdvice.PatientDietIdColumn]));
                     }
                 }
                 set {
@@ -4225,11 +4225,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PatientID {
                 get {
-                    try {
-                        return ((string)(this[this.tableDietAdvice.PatientIDColumn]));
+                    if (this.IsPatientIDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PatientID\' in table \'DietAdvice\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDietAdvice.PatientIDColumn]));
                     }
                 }
                 set {
@@ -4241,11 +4241,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string DietType {
                 get {
-                    try {
-                        return ((string)(this[this.tableDietAdvice.DietTypeColumn]));
+                    if (this.IsDietTypeNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DietType\' in table \'DietAdvice\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDietAdvice.DietTypeColumn]));
                     }
                 }
                 set {
@@ -4257,11 +4257,11 @@ namespace KMCPrescriptiom.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string CustomAdvice {
                 get {
-                    try {
-                        return ((string)(this[this.tableDietAdvice.CustomAdviceColumn]));
+                    if (this.IsCustomAdviceNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CustomAdvice\' in table \'DietAdvice\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableDietAdvice.CustomAdviceColumn]));
                     }
                 }
                 set {

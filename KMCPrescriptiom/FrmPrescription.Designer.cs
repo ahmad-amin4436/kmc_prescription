@@ -224,6 +224,7 @@
             // txtContact
             // 
             this.txtContact.Location = new System.Drawing.Point(365, 51);
+            this.txtContact.MaxLength = 25;
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(145, 33);
             this.txtContact.TabIndex = 9;
@@ -261,6 +262,7 @@
             // txtAge
             // 
             this.txtAge.Location = new System.Drawing.Point(564, 11);
+            this.txtAge.MaxLength = 25;
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(163, 33);
             this.txtAge.TabIndex = 5;
@@ -286,6 +288,7 @@
             // txtFullName
             // 
             this.txtFullName.Location = new System.Drawing.Point(365, 11);
+            this.txtFullName.MaxLength = 25;
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(145, 33);
             this.txtFullName.TabIndex = 2;
@@ -293,6 +296,7 @@
             // txtMRNo
             // 
             this.txtMRNo.Location = new System.Drawing.Point(83, 11);
+            this.txtMRNo.MaxLength = 25;
             this.txtMRNo.Name = "txtMRNo";
             this.txtMRNo.Size = new System.Drawing.Size(145, 33);
             this.txtMRNo.TabIndex = 1;
@@ -410,6 +414,7 @@
             // txtDrugsAllergies
             // 
             this.txtDrugsAllergies.Location = new System.Drawing.Point(646, 54);
+            this.txtDrugsAllergies.MaxLength = 165;
             this.txtDrugsAllergies.Name = "txtDrugsAllergies";
             this.txtDrugsAllergies.Size = new System.Drawing.Size(243, 33);
             this.txtDrugsAllergies.TabIndex = 3;
@@ -417,6 +422,7 @@
             // txtPastMedicalHistory
             // 
             this.txtPastMedicalHistory.Location = new System.Drawing.Point(208, 57);
+            this.txtPastMedicalHistory.MaxLength = 165;
             this.txtPastMedicalHistory.Name = "txtPastMedicalHistory";
             this.txtPastMedicalHistory.Size = new System.Drawing.Size(243, 33);
             this.txtPastMedicalHistory.TabIndex = 2;
@@ -424,6 +430,7 @@
             // txtPastSurgicalHistory
             // 
             this.txtPastSurgicalHistory.Location = new System.Drawing.Point(646, 15);
+            this.txtPastSurgicalHistory.MaxLength = 165;
             this.txtPastSurgicalHistory.Name = "txtPastSurgicalHistory";
             this.txtPastSurgicalHistory.Size = new System.Drawing.Size(243, 33);
             this.txtPastSurgicalHistory.TabIndex = 1;
@@ -431,6 +438,7 @@
             // txtPresentingComplaints
             // 
             this.txtPresentingComplaints.Location = new System.Drawing.Point(208, 18);
+            this.txtPresentingComplaints.MaxLength = 165;
             this.txtPresentingComplaints.Name = "txtPresentingComplaints";
             this.txtPresentingComplaints.Size = new System.Drawing.Size(243, 33);
             this.txtPresentingComplaints.TabIndex = 0;
@@ -523,6 +531,7 @@
             // txtRemarksSysExam
             // 
             this.txtRemarksSysExam.Location = new System.Drawing.Point(421, 73);
+            this.txtRemarksSysExam.MaxLength = 165;
             this.txtRemarksSysExam.Multiline = true;
             this.txtRemarksSysExam.Name = "txtRemarksSysExam";
             this.txtRemarksSysExam.Size = new System.Drawing.Size(321, 72);
@@ -694,6 +703,7 @@
             // txtTestNormalRange
             // 
             this.txtTestNormalRange.Location = new System.Drawing.Point(146, 87);
+            this.txtTestNormalRange.MaxLength = 25;
             this.txtTestNormalRange.Name = "txtTestNormalRange";
             this.txtTestNormalRange.Size = new System.Drawing.Size(183, 33);
             this.txtTestNormalRange.TabIndex = 9;
@@ -701,6 +711,7 @@
             // txtTestUnit
             // 
             this.txtTestUnit.Location = new System.Drawing.Point(623, 25);
+            this.txtTestUnit.MaxLength = 25;
             this.txtTestUnit.Name = "txtTestUnit";
             this.txtTestUnit.Size = new System.Drawing.Size(183, 33);
             this.txtTestUnit.TabIndex = 8;
@@ -708,6 +719,7 @@
             // txtTestResult
             // 
             this.txtTestResult.Location = new System.Drawing.Point(378, 25);
+            this.txtTestResult.MaxLength = 25;
             this.txtTestResult.Name = "txtTestResult";
             this.txtTestResult.Size = new System.Drawing.Size(183, 33);
             this.txtTestResult.TabIndex = 7;
@@ -761,6 +773,7 @@
             // txtTestName
             // 
             this.txtTestName.Location = new System.Drawing.Point(110, 25);
+            this.txtTestName.MaxLength = 25;
             this.txtTestName.Name = "txtTestName";
             this.txtTestName.Size = new System.Drawing.Size(183, 33);
             this.txtTestName.TabIndex = 0;
@@ -784,9 +797,10 @@
             // txtProvisionalDiagnosis
             // 
             this.txtProvisionalDiagnosis.Location = new System.Drawing.Point(201, 18);
+            this.txtProvisionalDiagnosis.MaxLength = 25;
             this.txtProvisionalDiagnosis.Multiline = true;
             this.txtProvisionalDiagnosis.Name = "txtProvisionalDiagnosis";
-            this.txtProvisionalDiagnosis.Size = new System.Drawing.Size(232, 83);
+            this.txtProvisionalDiagnosis.Size = new System.Drawing.Size(232, 34);
             this.txtProvisionalDiagnosis.TabIndex = 6;
             // 
             // gvProvDiagnosis
@@ -804,6 +818,7 @@
             // txtFinalDiagnosis
             // 
             this.txtFinalDiagnosis.Location = new System.Drawing.Point(575, 18);
+            this.txtFinalDiagnosis.MaxLength = 165;
             this.txtFinalDiagnosis.Multiline = true;
             this.txtFinalDiagnosis.Name = "txtFinalDiagnosis";
             this.txtFinalDiagnosis.Size = new System.Drawing.Size(321, 83);
@@ -864,6 +879,7 @@
             // txtMedicien
             // 
             this.txtMedicien.Location = new System.Drawing.Point(110, 26);
+            this.txtMedicien.MaxLength = 165;
             this.txtMedicien.Name = "txtMedicien";
             this.txtMedicien.Size = new System.Drawing.Size(255, 33);
             this.txtMedicien.TabIndex = 16;
@@ -929,6 +945,7 @@
             // txtInstructions
             // 
             this.txtInstructions.Location = new System.Drawing.Point(124, 65);
+            this.txtInstructions.MaxLength = 165;
             this.txtInstructions.Multiline = true;
             this.txtInstructions.Name = "txtInstructions";
             this.txtInstructions.Size = new System.Drawing.Size(422, 66);
@@ -937,6 +954,7 @@
             // txtDays
             // 
             this.txtDays.Location = new System.Drawing.Point(433, 23);
+            this.txtDays.MaxLength = 165;
             this.txtDays.Name = "txtDays";
             this.txtDays.Size = new System.Drawing.Size(187, 33);
             this.txtDays.TabIndex = 8;
@@ -984,6 +1002,7 @@
             // txtDose
             // 
             this.txtDose.Location = new System.Drawing.Point(686, 23);
+            this.txtDose.MaxLength = 165;
             this.txtDose.Name = "txtDose";
             this.txtDose.Size = new System.Drawing.Size(203, 33);
             this.txtDose.TabIndex = 1;
@@ -1037,6 +1056,7 @@
             // txtCustomDietaryInstructions
             // 
             this.txtCustomDietaryInstructions.Location = new System.Drawing.Point(202, 42);
+            this.txtCustomDietaryInstructions.MaxLength = 165;
             this.txtCustomDietaryInstructions.Multiline = true;
             this.txtCustomDietaryInstructions.Name = "txtCustomDietaryInstructions";
             this.txtCustomDietaryInstructions.Size = new System.Drawing.Size(518, 119);
