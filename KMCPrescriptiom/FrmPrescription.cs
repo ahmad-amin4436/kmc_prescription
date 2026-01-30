@@ -26,7 +26,7 @@ namespace KMCPrescriptiom
             ConfigurePatientCombo();
             LoadPatientsCache();
         }
-
+           
         // =======================
         // Configure ComboBox
         // =======================
@@ -197,8 +197,59 @@ namespace KMCPrescriptiom
                 new SqlParameter("@PatientId", patientId));
             gvDiet.DataSource = Diet_dt;
 
+            AddDeleteButton(gvPatientHistory);
+            AddDeleteButton(gvPatientExam);
+            AddDeleteButton(gvLabReportTests);
+            AddDeleteButton(gvProvDiagnosis);
+            AddDeleteButton(gvPrescription);
+            AddDeleteButton(gvDiet);
 
 
+        }
+
+        private void HandleDelete(
+    DataGridView gv,
+    DataGridViewCellEventArgs e,
+    string idColumn,
+    string tableName,
+    string pkColumn)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (gv.Columns[e.ColumnIndex].Name != "btnDelete")
+                return;
+
+            var id = gv.Rows[e.RowIndex].Cells[idColumn].Value;
+
+            if (MessageBox.Show("Delete this record?",
+                "Confirm",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) != DialogResult.Yes)
+                return;
+
+            DAL.Execute(
+                $"DELETE FROM {tableName} WHERE {pkColumn} = @Id",
+                new SqlParameter("@Id", id));
+
+            gv.Rows.RemoveAt(e.RowIndex);
+            ConfigurePatientCombo();
+            LoadPatientsCache();
+            LoadPatient(PatientID);
+        }
+
+
+        private void AddDeleteButton(DataGridView gv)
+        {
+            if (gv.Columns["btnDelete"] == null)
+            {
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.Name = "btnDelete";
+                btn.HeaderText = "Delete";
+                btn.Text = "Delete";
+                btn.UseColumnTextForButtonValue = true;
+                btn.Width = 70;
+                gv.Columns.Add(btn);
+            }
         }
 
         // =======================
@@ -532,7 +583,100 @@ namespace KMCPrescriptiom
                 UseShellExecute = true
             });
         }
+        private void gvPatientHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HandleDelete(gvPatientHistory, e, "ID", "PatientHistory", "HistoryId");
+        }
 
+        private void gvPatientExam_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HandleDelete(gvPatientExam, e, "ID", "PhysicalExamination", "ExamId");
+        }
+
+        private void gvLabReportTests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HandleDelete(gvLabReportTests, e, "ID", "PatientLabReports", "ReportId");
+        }
+
+        private void gvProvDiagnosis_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HandleDelete(gvProvDiagnosis, e, "ID", "PatientDiagnosis", "PatientDiagnosisId");
+        }
+
+        private void gvPrescription_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HandleDelete(gvPrescription, e, "ID", "Prescriptions", "PrescriptionId");
+        }
+
+        private void gvDiet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HandleDelete(gvDiet, e, "ID", "PatientDietAdvice", "PatientDietId");
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ResetForm(this);  // Reset all controls
+            PatientID = 0;
+            ConfigurePatientCombo();
+            LoadPatientsCache();
+            LoadPatient(PatientID);
+
+            // Reset date picker separately if needed
+            dtVisit.Value = DateTime.Now;
+        }
+
+        /// <summary>
+        /// Recursively resets all input controls in a container (Form or Panel)
+        /// </summary>
+        private void ResetForm(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                switch (ctrl)
+                {
+                    case TextBox txt:
+                        txt.Clear();
+                        break;
+                    case ComboBox cmb:
+                        cmb.SelectedIndex = -1; // reset selection
+                        break;
+                    case CheckBox chk:
+                        chk.Checked = false;
+                        break;
+                    case RadioButton rb:
+                        rb.Checked = false;
+                        break;
+                    case DateTimePicker dtp:
+                        dtp.Value = DateTime.Now;
+                        break;
+                    case NumericUpDown nud:
+                        nud.Value = nud.Minimum;
+                        break;
+                    case ListBox lb:
+                        lb.ClearSelected();
+                        break;
+                }
+
+                // If the control has child controls, reset them too
+                if (ctrl.HasChildren)
+                {
+                    ResetForm(ctrl);
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // Closes all forms and ends the app
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+            FrmPatients patientForm = new FrmPatients();
+
+            patientForm.Show();
+
+        }
 
     }
 

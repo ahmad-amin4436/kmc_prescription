@@ -122,10 +122,9 @@
             this.chkListDietary = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnPreview = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnPatients = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -165,6 +164,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnSavePatient);
             this.panel1.Controls.Add(this.cmbExistingPatients);
             this.panel1.Controls.Add(this.lblVisit);
@@ -187,9 +187,9 @@
             // 
             // btnSavePatient
             // 
-            this.btnSavePatient.Location = new System.Drawing.Point(773, 48);
+            this.btnSavePatient.Location = new System.Drawing.Point(733, 46);
             this.btnSavePatient.Name = "btnSavePatient";
-            this.btnSavePatient.Size = new System.Drawing.Size(140, 32);
+            this.btnSavePatient.Size = new System.Drawing.Size(88, 32);
             this.btnSavePatient.TabIndex = 1;
             this.btnSavePatient.Text = "Save";
             this.btnSavePatient.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             // 
             this.dtVisit.Location = new System.Drawing.Point(564, 47);
             this.dtVisit.Name = "dtVisit";
-            this.dtVisit.Size = new System.Drawing.Size(203, 33);
+            this.dtVisit.Size = new System.Drawing.Size(163, 33);
             this.dtVisit.TabIndex = 10;
             // 
             // txtContact
@@ -364,6 +364,7 @@
             this.gvPatientHistory.RowTemplate.Height = 28;
             this.gvPatientHistory.Size = new System.Drawing.Size(877, 150);
             this.gvPatientHistory.TabIndex = 9;
+            this.gvPatientHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPatientHistory_CellContentClick);
             // 
             // btnSaveHistory
             // 
@@ -517,6 +518,7 @@
             this.gvPatientExam.RowTemplate.Height = 28;
             this.gvPatientExam.Size = new System.Drawing.Size(851, 134);
             this.gvPatientExam.TabIndex = 10;
+            this.gvPatientExam.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPatientExam_CellContentClick);
             // 
             // btnSaveExamination
             // 
@@ -699,6 +701,7 @@
             this.gvLabReportTests.RowTemplate.Height = 28;
             this.gvLabReportTests.Size = new System.Drawing.Size(888, 163);
             this.gvLabReportTests.TabIndex = 10;
+            this.gvLabReportTests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvLabReportTests_CellContentClick);
             // 
             // txtTestNormalRange
             // 
@@ -814,6 +817,7 @@
             this.gvProvDiagnosis.RowTemplate.Height = 28;
             this.gvProvDiagnosis.Size = new System.Drawing.Size(888, 150);
             this.gvProvDiagnosis.TabIndex = 5;
+            this.gvProvDiagnosis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvProvDiagnosis_CellContentClick);
             // 
             // txtFinalDiagnosis
             // 
@@ -895,6 +899,7 @@
             this.gvPrescription.RowTemplate.Height = 28;
             this.gvPrescription.Size = new System.Drawing.Size(870, 165);
             this.gvPrescription.TabIndex = 15;
+            this.gvPrescription.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPrescription_CellContentClick);
             // 
             // btnSavePrescriptions
             // 
@@ -1043,6 +1048,7 @@
             this.gvDiet.RowTemplate.Height = 28;
             this.gvDiet.Size = new System.Drawing.Size(888, 134);
             this.gvDiet.TabIndex = 3;
+            this.gvDiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDiet_CellContentClick);
             // 
             // label14
             // 
@@ -1079,10 +1085,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Controls.Add(this.btnPreview);
+            this.panel3.Controls.Add(this.btnPatients);
             this.panel3.Controls.Add(this.btnPrint);
-            this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Controls.Add(this.btnNew);
             this.panel3.Location = new System.Drawing.Point(3, 451);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(917, 54);
@@ -1092,29 +1096,19 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(465, 16);
+            this.btnClose.Location = new System.Drawing.Point(483, 16);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(111, 35);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.BackColor = System.Drawing.Color.Orange;
-            this.btnPreview.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPreview.Location = new System.Drawing.Point(347, 16);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(111, 35);
-            this.btnPreview.TabIndex = 3;
-            this.btnPreview.Text = "Preview";
-            this.btnPreview.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(237, 16);
+            this.btnPrint.Location = new System.Drawing.Point(255, 16);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(104, 35);
             this.btnPrint.TabIndex = 2;
@@ -1122,27 +1116,27 @@
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // btnSave
+            // btnClear
             // 
-            this.btnSave.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(117, 16);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 35);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnClear.Location = new System.Drawing.Point(821, 46);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(92, 32);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnNew
+            // btnPatients
             // 
-            this.btnNew.BackColor = System.Drawing.Color.Gray;
-            this.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNew.Location = new System.Drawing.Point(7, 16);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(104, 35);
-            this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnPatients.BackColor = System.Drawing.Color.Orange;
+            this.btnPatients.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPatients.Location = new System.Drawing.Point(365, 16);
+            this.btnPatients.Name = "btnPatients";
+            this.btnPatients.Size = new System.Drawing.Size(111, 35);
+            this.btnPatients.TabIndex = 3;
+            this.btnPatients.Text = "Patients";
+            this.btnPatients.UseVisualStyleBackColor = false;
+            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
             // FrmPrescription
             // 
@@ -1211,10 +1205,7 @@
         private System.Windows.Forms.TabPage Diagnosis;
         private System.Windows.Forms.TabPage Prescription;
         private System.Windows.Forms.TabPage DietaryAdvice;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel6;
@@ -1286,5 +1277,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtBreath;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnPatients;
     }
 }

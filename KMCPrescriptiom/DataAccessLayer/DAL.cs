@@ -2,6 +2,7 @@
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Data.Common;
 using System;
+using System.Data.SqlClient;
 
 namespace KMCPrescriptiom.DataAccessLayer
 {
@@ -18,6 +19,24 @@ namespace KMCPrescriptiom.DataAccessLayer
                 return ds.Tables[0];
             }
         }
+        public static int Execute(string sql, params DbParameter[] parameters)
+        {
+            using (DbCommand cmd = _db.GetSqlStringCommand(sql))
+            {
+                if (parameters != null && parameters.Length > 0)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.Add(param);
+                    }
+                }
+
+                return _db.ExecuteNonQuery(cmd);
+            }
+        }
+
+
+
         public static DataTable GetData(string sql, params DbParameter[] parameters)
         {
             using (DbCommand cmd = _db.GetSqlStringCommand(sql))
