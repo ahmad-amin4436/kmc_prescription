@@ -88,9 +88,12 @@ namespace KMCPrescriptiom.Dataset
 
 namespace KMCPrescriptiom.Dataset
 {
-}namespace KMCPrescriptiom.Dataset {
-    
-    
-    public partial class Prescription {
+}
+namespace KMCPrescriptiom.Dataset
+{
+
+
+    public partial class Prescription
+    {
     }
 }

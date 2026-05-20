@@ -30,6 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnSavePatient = new System.Windows.Forms.Button();
             this.cmbExistingPatients = new System.Windows.Forms.ComboBox();
             this.lblVisit = new System.Windows.Forms.Label();
@@ -122,11 +124,13 @@
             this.chkListDietary = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnPatients = new System.Windows.Forms.Button();
+            this.btnOut = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.History.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -153,7 +157,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 29);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(159, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
@@ -185,6 +189,25 @@
             this.panel1.Size = new System.Drawing.Size(917, 84);
             this.panel1.TabIndex = 0;
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(821, 46);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(92, 32);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Location = new System.Drawing.Point(13, 15);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(100, 96);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 13;
+            this.picLogo.TabStop = false;
+            // 
             // btnSavePatient
             // 
             this.btnSavePatient.Location = new System.Drawing.Point(733, 46);
@@ -200,7 +223,7 @@
             this.cmbExistingPatients.FormattingEnabled = true;
             this.cmbExistingPatients.Location = new System.Drawing.Point(733, 11);
             this.cmbExistingPatients.Name = "cmbExistingPatients";
-            this.cmbExistingPatients.Size = new System.Drawing.Size(181, 33);
+            this.cmbExistingPatients.Size = new System.Drawing.Size(181, 29);
             this.cmbExistingPatients.TabIndex = 12;
             this.cmbExistingPatients.SelectionChangeCommitted += new System.EventHandler(this.cmbExistingPatients_SelectionChangeCommitted);
             this.cmbExistingPatients.TextUpdate += new System.EventHandler(this.cmbExistingPatients_TextUpdate);
@@ -210,7 +233,7 @@
             this.lblVisit.AutoSize = true;
             this.lblVisit.Location = new System.Drawing.Point(515, 53);
             this.lblVisit.Name = "lblVisit";
-            this.lblVisit.Size = new System.Drawing.Size(43, 25);
+            this.lblVisit.Size = new System.Drawing.Size(36, 21);
             this.lblVisit.TabIndex = 11;
             this.lblVisit.Text = "Vist";
             // 
@@ -218,7 +241,7 @@
             // 
             this.dtVisit.Location = new System.Drawing.Point(564, 47);
             this.dtVisit.Name = "dtVisit";
-            this.dtVisit.Size = new System.Drawing.Size(163, 33);
+            this.dtVisit.Size = new System.Drawing.Size(163, 29);
             this.dtVisit.TabIndex = 10;
             // 
             // txtContact
@@ -226,7 +249,7 @@
             this.txtContact.Location = new System.Drawing.Point(365, 51);
             this.txtContact.MaxLength = 25;
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(145, 33);
+            this.txtContact.Size = new System.Drawing.Size(145, 29);
             this.txtContact.TabIndex = 9;
             // 
             // label3
@@ -234,7 +257,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(239, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 25);
+            this.label3.Size = new System.Drawing.Size(91, 21);
             this.label3.TabIndex = 8;
             this.label3.Text = "Contact No.";
             // 
@@ -243,7 +266,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 25);
+            this.label2.Size = new System.Drawing.Size(61, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Gender";
             // 
@@ -256,7 +279,7 @@
             "Other"});
             this.cmbGender.Location = new System.Drawing.Point(83, 50);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(145, 33);
+            this.cmbGender.Size = new System.Drawing.Size(145, 29);
             this.cmbGender.TabIndex = 6;
             // 
             // txtAge
@@ -264,7 +287,7 @@
             this.txtAge.Location = new System.Drawing.Point(564, 11);
             this.txtAge.MaxLength = 25;
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(163, 33);
+            this.txtAge.Size = new System.Drawing.Size(163, 29);
             this.txtAge.TabIndex = 5;
             // 
             // label1
@@ -272,7 +295,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(513, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 25);
+            this.label1.Size = new System.Drawing.Size(37, 21);
             this.label1.TabIndex = 4;
             this.label1.Text = "Age";
             // 
@@ -281,7 +304,7 @@
             this.lbl.AutoSize = true;
             this.lbl.Location = new System.Drawing.Point(234, 14);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(125, 25);
+            this.lbl.Size = new System.Drawing.Size(103, 21);
             this.lbl.TabIndex = 3;
             this.lbl.Text = "Patient Name";
             // 
@@ -290,7 +313,7 @@
             this.txtFullName.Location = new System.Drawing.Point(365, 11);
             this.txtFullName.MaxLength = 25;
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(145, 33);
+            this.txtFullName.Size = new System.Drawing.Size(145, 29);
             this.txtFullName.TabIndex = 2;
             // 
             // txtMRNo
@@ -298,7 +321,7 @@
             this.txtMRNo.Location = new System.Drawing.Point(83, 11);
             this.txtMRNo.MaxLength = 25;
             this.txtMRNo.Name = "txtMRNo";
-            this.txtMRNo.Size = new System.Drawing.Size(145, 33);
+            this.txtMRNo.Size = new System.Drawing.Size(145, 29);
             this.txtMRNo.TabIndex = 1;
             // 
             // lblMRNo
@@ -306,7 +329,7 @@
             this.lblMRNo.AutoSize = true;
             this.lblMRNo.Location = new System.Drawing.Point(14, 14);
             this.lblMRNo.Name = "lblMRNo";
-            this.lblMRNo.Size = new System.Drawing.Size(70, 25);
+            this.lblMRNo.Size = new System.Drawing.Size(59, 21);
             this.lblMRNo.TabIndex = 0;
             this.lblMRNo.Text = "MRN #";
             // 
@@ -345,10 +368,10 @@
             this.tabPage1.Controls.Add(this.txtPastSurgicalHistory);
             this.tabPage1.Controls.Add(this.txtPresentingComplaints);
             this.tabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(906, 308);
+            this.tabPage1.Size = new System.Drawing.Size(906, 312);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "History";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -381,7 +404,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(458, 60);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(140, 25);
+            this.label19.Size = new System.Drawing.Size(116, 21);
             this.label19.TabIndex = 7;
             this.label19.Text = "Drugs Allergies";
             // 
@@ -390,7 +413,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(458, 18);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(183, 25);
+            this.label18.Size = new System.Drawing.Size(152, 21);
             this.label18.TabIndex = 6;
             this.label18.Text = "Past Surgical History";
             // 
@@ -399,7 +422,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(7, 57);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(182, 25);
+            this.label17.Size = new System.Drawing.Size(150, 21);
             this.label17.TabIndex = 5;
             this.label17.Text = "Past Medical History";
             // 
@@ -408,7 +431,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(6, 18);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(202, 25);
+            this.label16.Size = new System.Drawing.Size(167, 21);
             this.label16.TabIndex = 4;
             this.label16.Text = "Presenting Complaints";
             // 
@@ -417,7 +440,7 @@
             this.txtDrugsAllergies.Location = new System.Drawing.Point(646, 54);
             this.txtDrugsAllergies.MaxLength = 165;
             this.txtDrugsAllergies.Name = "txtDrugsAllergies";
-            this.txtDrugsAllergies.Size = new System.Drawing.Size(243, 33);
+            this.txtDrugsAllergies.Size = new System.Drawing.Size(243, 29);
             this.txtDrugsAllergies.TabIndex = 3;
             // 
             // txtPastMedicalHistory
@@ -425,7 +448,7 @@
             this.txtPastMedicalHistory.Location = new System.Drawing.Point(208, 57);
             this.txtPastMedicalHistory.MaxLength = 165;
             this.txtPastMedicalHistory.Name = "txtPastMedicalHistory";
-            this.txtPastMedicalHistory.Size = new System.Drawing.Size(243, 33);
+            this.txtPastMedicalHistory.Size = new System.Drawing.Size(243, 29);
             this.txtPastMedicalHistory.TabIndex = 2;
             // 
             // txtPastSurgicalHistory
@@ -433,7 +456,7 @@
             this.txtPastSurgicalHistory.Location = new System.Drawing.Point(646, 15);
             this.txtPastSurgicalHistory.MaxLength = 165;
             this.txtPastSurgicalHistory.Name = "txtPastSurgicalHistory";
-            this.txtPastSurgicalHistory.Size = new System.Drawing.Size(243, 33);
+            this.txtPastSurgicalHistory.Size = new System.Drawing.Size(243, 29);
             this.txtPastSurgicalHistory.TabIndex = 1;
             // 
             // txtPresentingComplaints
@@ -441,16 +464,16 @@
             this.txtPresentingComplaints.Location = new System.Drawing.Point(208, 18);
             this.txtPresentingComplaints.MaxLength = 165;
             this.txtPresentingComplaints.Name = "txtPresentingComplaints";
-            this.txtPresentingComplaints.Size = new System.Drawing.Size(243, 33);
+            this.txtPresentingComplaints.Size = new System.Drawing.Size(243, 29);
             this.txtPresentingComplaints.TabIndex = 0;
             // 
             // Examination
             // 
             this.Examination.Controls.Add(this.flowLayoutPanel1);
-            this.Examination.Location = new System.Drawing.Point(4, 34);
+            this.Examination.Location = new System.Drawing.Point(4, 30);
             this.Examination.Name = "Examination";
             this.Examination.Padding = new System.Windows.Forms.Padding(3);
-            this.Examination.Size = new System.Drawing.Size(906, 308);
+            this.Examination.Size = new System.Drawing.Size(906, 312);
             this.Examination.TabIndex = 1;
             this.Examination.Text = "Examination";
             this.Examination.UseVisualStyleBackColor = true;
@@ -496,7 +519,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(3, 81);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 25);
+            this.label15.Size = new System.Drawing.Size(59, 21);
             this.label15.TabIndex = 12;
             this.label15.Text = "Weight";
             // 
@@ -504,7 +527,7 @@
             // 
             this.txtWeight.Location = new System.Drawing.Point(81, 77);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(61, 33);
+            this.txtWeight.Size = new System.Drawing.Size(61, 29);
             this.txtWeight.TabIndex = 11;
             // 
             // gvPatientExam
@@ -544,7 +567,7 @@
             this.chkNormal.AutoSize = true;
             this.chkNormal.Location = new System.Drawing.Point(19, 116);
             this.chkNormal.Name = "chkNormal";
-            this.chkNormal.Size = new System.Drawing.Size(210, 29);
+            this.chkNormal.Size = new System.Drawing.Size(174, 25);
             this.chkNormal.TabIndex = 7;
             this.chkNormal.Text = "Normal Examination";
             this.chkNormal.UseVisualStyleBackColor = true;
@@ -553,35 +576,35 @@
             // 
             this.txtBreath.Location = new System.Drawing.Point(222, 77);
             this.txtBreath.Name = "txtBreath";
-            this.txtBreath.Size = new System.Drawing.Size(93, 33);
+            this.txtBreath.Size = new System.Drawing.Size(93, 29);
             this.txtBreath.TabIndex = 5;
             // 
             // txtSugar
             // 
             this.txtSugar.Location = new System.Drawing.Point(749, 20);
             this.txtSugar.Name = "txtSugar";
-            this.txtSugar.Size = new System.Drawing.Size(79, 33);
+            this.txtSugar.Size = new System.Drawing.Size(79, 29);
             this.txtSugar.TabIndex = 5;
             // 
             // txtHeartBeat
             // 
             this.txtHeartBeat.Location = new System.Drawing.Point(608, 20);
             this.txtHeartBeat.Name = "txtHeartBeat";
-            this.txtHeartBeat.Size = new System.Drawing.Size(61, 33);
+            this.txtHeartBeat.Size = new System.Drawing.Size(61, 29);
             this.txtHeartBeat.TabIndex = 5;
             // 
             // txtHeight
             // 
             this.txtHeight.Location = new System.Drawing.Point(462, 22);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(61, 33);
+            this.txtHeight.Size = new System.Drawing.Size(61, 29);
             this.txtHeight.TabIndex = 5;
             // 
             // txtTemp
             // 
             this.txtTemp.Location = new System.Drawing.Point(321, 22);
             this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(61, 33);
+            this.txtTemp.Size = new System.Drawing.Size(61, 29);
             this.txtTemp.TabIndex = 4;
             // 
             // label22
@@ -589,7 +612,7 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(148, 80);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(67, 25);
+            this.label22.Size = new System.Drawing.Size(55, 21);
             this.label22.TabIndex = 1;
             this.label22.Text = "Breath";
             // 
@@ -598,7 +621,7 @@
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(675, 23);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(61, 25);
+            this.label21.Size = new System.Drawing.Size(51, 21);
             this.label21.TabIndex = 1;
             this.label21.Text = "Sugar";
             // 
@@ -606,7 +629,7 @@
             // 
             this.txtPulse.Location = new System.Drawing.Point(191, 25);
             this.txtPulse.Name = "txtPulse";
-            this.txtPulse.Size = new System.Drawing.Size(61, 33);
+            this.txtPulse.Size = new System.Drawing.Size(61, 29);
             this.txtPulse.TabIndex = 3;
             // 
             // label20
@@ -614,7 +637,7 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(534, 23);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 25);
+            this.label20.Size = new System.Drawing.Size(48, 21);
             this.label20.TabIndex = 1;
             this.label20.Text = "Heart";
             // 
@@ -622,7 +645,7 @@
             // 
             this.txtBP.Location = new System.Drawing.Point(65, 25);
             this.txtBP.Name = "txtBP";
-            this.txtBP.Size = new System.Drawing.Size(61, 33);
+            this.txtBP.Size = new System.Drawing.Size(61, 29);
             this.txtBP.TabIndex = 2;
             // 
             // lblHeight
@@ -630,7 +653,7 @@
             this.lblHeight.AutoSize = true;
             this.lblHeight.Location = new System.Drawing.Point(388, 25);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(68, 25);
+            this.lblHeight.Size = new System.Drawing.Size(56, 21);
             this.lblHeight.TabIndex = 1;
             this.lblHeight.Text = "Height";
             // 
@@ -639,7 +662,7 @@
             this.lblRemarks.AutoSize = true;
             this.lblRemarks.Location = new System.Drawing.Point(333, 98);
             this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.Size = new System.Drawing.Size(82, 25);
+            this.lblRemarks.Size = new System.Drawing.Size(71, 21);
             this.lblRemarks.TabIndex = 1;
             this.lblRemarks.Text = "Remarks";
             // 
@@ -648,7 +671,7 @@
             this.lblTemp.AutoSize = true;
             this.lblTemp.Location = new System.Drawing.Point(258, 25);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(57, 25);
+            this.lblTemp.Size = new System.Drawing.Size(47, 21);
             this.lblTemp.TabIndex = 1;
             this.lblTemp.Text = "Temp";
             // 
@@ -657,7 +680,7 @@
             this.lblPulse.AutoSize = true;
             this.lblPulse.Location = new System.Drawing.Point(137, 28);
             this.lblPulse.Name = "lblPulse";
-            this.lblPulse.Size = new System.Drawing.Size(57, 25);
+            this.lblPulse.Size = new System.Drawing.Size(47, 21);
             this.lblPulse.TabIndex = 1;
             this.lblPulse.Text = "Pulse";
             // 
@@ -666,7 +689,7 @@
             this.lblBP.AutoSize = true;
             this.lblBP.Location = new System.Drawing.Point(14, 28);
             this.lblBP.Name = "lblBP";
-            this.lblBP.Size = new System.Drawing.Size(34, 25);
+            this.lblBP.Size = new System.Drawing.Size(28, 21);
             this.lblBP.TabIndex = 0;
             this.lblBP.Text = "BP";
             // 
@@ -682,10 +705,10 @@
             this.LabReports.Controls.Add(this.label5);
             this.LabReports.Controls.Add(this.label4);
             this.LabReports.Controls.Add(this.txtTestName);
-            this.LabReports.Location = new System.Drawing.Point(4, 34);
+            this.LabReports.Location = new System.Drawing.Point(4, 30);
             this.LabReports.Name = "LabReports";
             this.LabReports.Padding = new System.Windows.Forms.Padding(3);
-            this.LabReports.Size = new System.Drawing.Size(906, 308);
+            this.LabReports.Size = new System.Drawing.Size(906, 312);
             this.LabReports.TabIndex = 2;
             this.LabReports.Text = "Lab Reports";
             this.LabReports.UseVisualStyleBackColor = true;
@@ -708,7 +731,7 @@
             this.txtTestNormalRange.Location = new System.Drawing.Point(146, 87);
             this.txtTestNormalRange.MaxLength = 25;
             this.txtTestNormalRange.Name = "txtTestNormalRange";
-            this.txtTestNormalRange.Size = new System.Drawing.Size(183, 33);
+            this.txtTestNormalRange.Size = new System.Drawing.Size(183, 29);
             this.txtTestNormalRange.TabIndex = 9;
             // 
             // txtTestUnit
@@ -716,7 +739,7 @@
             this.txtTestUnit.Location = new System.Drawing.Point(623, 25);
             this.txtTestUnit.MaxLength = 25;
             this.txtTestUnit.Name = "txtTestUnit";
-            this.txtTestUnit.Size = new System.Drawing.Size(183, 33);
+            this.txtTestUnit.Size = new System.Drawing.Size(183, 29);
             this.txtTestUnit.TabIndex = 8;
             // 
             // txtTestResult
@@ -724,7 +747,7 @@
             this.txtTestResult.Location = new System.Drawing.Point(378, 25);
             this.txtTestResult.MaxLength = 25;
             this.txtTestResult.Name = "txtTestResult";
-            this.txtTestResult.Size = new System.Drawing.Size(183, 33);
+            this.txtTestResult.Size = new System.Drawing.Size(183, 29);
             this.txtTestResult.TabIndex = 7;
             // 
             // btnAddTest
@@ -742,7 +765,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(7, 90);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
+            this.label7.Size = new System.Drawing.Size(111, 21);
             this.label7.TabIndex = 4;
             this.label7.Text = "Normal Range";
             // 
@@ -751,7 +774,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(570, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 25);
+            this.label6.Size = new System.Drawing.Size(39, 21);
             this.label6.TabIndex = 3;
             this.label6.Text = "Unit";
             // 
@@ -760,7 +783,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(310, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 25);
+            this.label5.Size = new System.Drawing.Size(53, 21);
             this.label5.TabIndex = 2;
             this.label5.Text = "Result";
             // 
@@ -769,7 +792,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 25);
+            this.label4.Size = new System.Drawing.Size(82, 21);
             this.label4.TabIndex = 1;
             this.label4.Text = "Test Name";
             // 
@@ -778,7 +801,7 @@
             this.txtTestName.Location = new System.Drawing.Point(110, 25);
             this.txtTestName.MaxLength = 25;
             this.txtTestName.Name = "txtTestName";
-            this.txtTestName.Size = new System.Drawing.Size(183, 33);
+            this.txtTestName.Size = new System.Drawing.Size(183, 29);
             this.txtTestName.TabIndex = 0;
             // 
             // Diagnosis
@@ -789,10 +812,10 @@
             this.Diagnosis.Controls.Add(this.label13);
             this.Diagnosis.Controls.Add(this.btnSaveDiagnosis);
             this.Diagnosis.Controls.Add(this.label12);
-            this.Diagnosis.Location = new System.Drawing.Point(4, 34);
+            this.Diagnosis.Location = new System.Drawing.Point(4, 30);
             this.Diagnosis.Name = "Diagnosis";
             this.Diagnosis.Padding = new System.Windows.Forms.Padding(3);
-            this.Diagnosis.Size = new System.Drawing.Size(906, 308);
+            this.Diagnosis.Size = new System.Drawing.Size(906, 312);
             this.Diagnosis.TabIndex = 3;
             this.Diagnosis.Text = "Diagnosis";
             this.Diagnosis.UseVisualStyleBackColor = true;
@@ -833,7 +856,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(430, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(139, 25);
+            this.label13.Size = new System.Drawing.Size(115, 21);
             this.label13.TabIndex = 3;
             this.label13.Text = "Final Diagnosis";
             // 
@@ -852,7 +875,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(192, 25);
+            this.label12.Size = new System.Drawing.Size(159, 21);
             this.label12.TabIndex = 1;
             this.label12.Text = "Provisional Diagnosis";
             // 
@@ -872,10 +895,10 @@
             this.Prescription.Controls.Add(this.chkNoon);
             this.Prescription.Controls.Add(this.chkMorning);
             this.Prescription.Controls.Add(this.txtDose);
-            this.Prescription.Location = new System.Drawing.Point(4, 34);
+            this.Prescription.Location = new System.Drawing.Point(4, 30);
             this.Prescription.Name = "Prescription";
             this.Prescription.Padding = new System.Windows.Forms.Padding(3);
-            this.Prescription.Size = new System.Drawing.Size(906, 308);
+            this.Prescription.Size = new System.Drawing.Size(906, 312);
             this.Prescription.TabIndex = 4;
             this.Prescription.Text = "Prescription";
             this.Prescription.UseVisualStyleBackColor = true;
@@ -885,7 +908,7 @@
             this.txtMedicien.Location = new System.Drawing.Point(110, 26);
             this.txtMedicien.MaxLength = 165;
             this.txtMedicien.Name = "txtMedicien";
-            this.txtMedicien.Size = new System.Drawing.Size(255, 33);
+            this.txtMedicien.Size = new System.Drawing.Size(255, 29);
             this.txtMedicien.TabIndex = 16;
             // 
             // gvPrescription
@@ -916,7 +939,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(14, 77);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 25);
+            this.label11.Size = new System.Drawing.Size(91, 21);
             this.label11.TabIndex = 13;
             this.label11.Text = "Instructions";
             // 
@@ -925,7 +948,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(371, 26);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 25);
+            this.label10.Size = new System.Drawing.Size(44, 21);
             this.label10.TabIndex = 12;
             this.label10.Text = "Days";
             // 
@@ -934,7 +957,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(626, 29);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 25);
+            this.label9.Size = new System.Drawing.Size(45, 21);
             this.label9.TabIndex = 11;
             this.label9.Text = "Dose";
             // 
@@ -943,7 +966,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(14, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 25);
+            this.label8.Size = new System.Drawing.Size(73, 21);
             this.label8.TabIndex = 10;
             this.label8.Text = "Medicine";
             // 
@@ -961,7 +984,7 @@
             this.txtDays.Location = new System.Drawing.Point(433, 23);
             this.txtDays.MaxLength = 165;
             this.txtDays.Name = "txtDays";
-            this.txtDays.Size = new System.Drawing.Size(187, 33);
+            this.txtDays.Size = new System.Drawing.Size(187, 29);
             this.txtDays.TabIndex = 8;
             // 
             // chkNight
@@ -969,7 +992,7 @@
             this.chkNight.AutoSize = true;
             this.chkNight.Location = new System.Drawing.Point(669, 100);
             this.chkNight.Name = "chkNight";
-            this.chkNight.Size = new System.Drawing.Size(85, 29);
+            this.chkNight.Size = new System.Drawing.Size(71, 25);
             this.chkNight.TabIndex = 7;
             this.chkNight.Text = "Night";
             this.chkNight.UseVisualStyleBackColor = true;
@@ -979,7 +1002,7 @@
             this.chkEvening.AutoSize = true;
             this.chkEvening.Location = new System.Drawing.Point(669, 65);
             this.chkEvening.Name = "chkEvening";
-            this.chkEvening.Size = new System.Drawing.Size(105, 29);
+            this.chkEvening.Size = new System.Drawing.Size(87, 25);
             this.chkEvening.TabIndex = 6;
             this.chkEvening.Text = "Evening";
             this.chkEvening.UseVisualStyleBackColor = true;
@@ -989,7 +1012,7 @@
             this.chkNoon.AutoSize = true;
             this.chkNoon.Location = new System.Drawing.Point(552, 100);
             this.chkNoon.Name = "chkNoon";
-            this.chkNoon.Size = new System.Drawing.Size(85, 29);
+            this.chkNoon.Size = new System.Drawing.Size(71, 25);
             this.chkNoon.TabIndex = 5;
             this.chkNoon.Text = "Noon";
             this.chkNoon.UseVisualStyleBackColor = true;
@@ -999,7 +1022,7 @@
             this.chkMorning.AutoSize = true;
             this.chkMorning.Location = new System.Drawing.Point(552, 65);
             this.chkMorning.Name = "chkMorning";
-            this.chkMorning.Size = new System.Drawing.Size(111, 29);
+            this.chkMorning.Size = new System.Drawing.Size(92, 25);
             this.chkMorning.TabIndex = 4;
             this.chkMorning.Text = "Morning";
             this.chkMorning.UseVisualStyleBackColor = true;
@@ -1009,7 +1032,7 @@
             this.txtDose.Location = new System.Drawing.Point(686, 23);
             this.txtDose.MaxLength = 165;
             this.txtDose.Name = "txtDose";
-            this.txtDose.Size = new System.Drawing.Size(203, 33);
+            this.txtDose.Size = new System.Drawing.Size(203, 29);
             this.txtDose.TabIndex = 1;
             // 
             // DietaryAdvice
@@ -1019,10 +1042,10 @@
             this.DietaryAdvice.Controls.Add(this.label14);
             this.DietaryAdvice.Controls.Add(this.txtCustomDietaryInstructions);
             this.DietaryAdvice.Controls.Add(this.chkListDietary);
-            this.DietaryAdvice.Location = new System.Drawing.Point(4, 34);
+            this.DietaryAdvice.Location = new System.Drawing.Point(4, 30);
             this.DietaryAdvice.Name = "DietaryAdvice";
             this.DietaryAdvice.Padding = new System.Windows.Forms.Padding(3);
-            this.DietaryAdvice.Size = new System.Drawing.Size(906, 308);
+            this.DietaryAdvice.Size = new System.Drawing.Size(906, 312);
             this.DietaryAdvice.TabIndex = 5;
             this.DietaryAdvice.Text = "Dietary Advice";
             this.DietaryAdvice.UseVisualStyleBackColor = true;
@@ -1055,7 +1078,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(202, 16);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(242, 25);
+            this.label14.Size = new System.Drawing.Size(201, 21);
             this.label14.TabIndex = 2;
             this.label14.Text = "Custom dietary instructions";
             // 
@@ -1079,13 +1102,15 @@
             "Increase fluids"});
             this.chkListDietary.Location = new System.Drawing.Point(12, 17);
             this.chkListDietary.Name = "chkListDietary";
-            this.chkListDietary.Size = new System.Drawing.Size(180, 144);
+            this.chkListDietary.Size = new System.Drawing.Size(180, 124);
             this.chkListDietary.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.btnPatients);
+            this.panel3.Controls.Add(this.btnOut);
+            this.panel3.Controls.Add(this.btnIn);
             this.panel3.Controls.Add(this.btnPrint);
             this.panel3.Location = new System.Drawing.Point(3, 451);
             this.panel3.Name = "panel3";
@@ -1096,7 +1121,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(483, 16);
+            this.btnClose.Location = new System.Drawing.Point(484, 16);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(111, 35);
             this.btnClose.TabIndex = 4;
@@ -1104,33 +1129,11 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(255, 16);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(104, 35);
-            this.btnPrint.TabIndex = 2;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(821, 46);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(92, 32);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnPatients
             // 
             this.btnPatients.BackColor = System.Drawing.Color.Orange;
             this.btnPatients.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPatients.Location = new System.Drawing.Point(365, 16);
+            this.btnPatients.Location = new System.Drawing.Point(368, 16);
             this.btnPatients.Name = "btnPatients";
             this.btnPatients.Size = new System.Drawing.Size(111, 35);
             this.btnPatients.TabIndex = 3;
@@ -1138,22 +1141,60 @@
             this.btnPatients.UseVisualStyleBackColor = false;
             this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
+            // btnOut
+            // 
+            this.btnOut.BackColor = System.Drawing.Color.Orange;
+            this.btnOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOut.Location = new System.Drawing.Point(136, 16);
+            this.btnOut.Name = "btnOut";
+            this.btnOut.Size = new System.Drawing.Size(104, 35);
+            this.btnOut.TabIndex = 2;
+            this.btnOut.Text = "OUT";
+            this.btnOut.UseVisualStyleBackColor = false;
+            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnIn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIn.Location = new System.Drawing.Point(20, 16);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(104, 35);
+            this.btnIn.TabIndex = 1;
+            this.btnIn.Text = "IN";
+            this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrint.Location = new System.Drawing.Point(252, 16);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(104, 35);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // FrmPrescription
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 622);
+            this.ClientSize = new System.Drawing.Size(1122, 554);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.picLogo);
             this.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrescription";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KMC Prescription";
+            this.Text = "AMC Prescription";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.History.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1278,6 +1319,9 @@
         private System.Windows.Forms.TextBox txtBreath;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnOut;
         private System.Windows.Forms.Button btnPatients;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
