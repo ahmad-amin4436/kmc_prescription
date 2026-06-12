@@ -276,10 +276,18 @@
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\amc-logo-removebg-preview.png" />
-    <Content Include="Assets\IconsList %281%29.png" />
-    <Content Include="Assets\ReportHeader %281%29.png" />
-    <Content Include="Assets\ReportHeader.png" />
+    <Content Include="Assets\amc-logo-removebg-preview.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\IconsList %281%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\ReportHeader %281%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\ReportHeader.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
     <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
     <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />

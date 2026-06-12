@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KMCPrescriptiom.Reports {
+namespace KMCPrescriptiom.bin.Debug.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace KMCPrescriptiom.Reports {
         
         public override string FullResourceName {
             get {
-                return "KMCPrescriptiom.Reports.Prescription.rpt";
+                return "KMCPrescriptiom.bin.Debug.Reports.Prescription.rpt";
             }
             set {
                 // Do nothing
